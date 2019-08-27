@@ -8,24 +8,26 @@
   android:orientation="vertical"
   tools:context=".MainActivity">
 
-  <com.perdev.viewlib.widget.PieChartView
-    android:id="@+id/pcv_am"
-    android:layout_width="300dp"
-    android:visibility="gone"
-    android:layout_height="200dp"
-    android:background="#00f"
-    app:clockwise="false"
-    app:pie_color="#fff"
-    app:start_angle="180"
-    />
+  <!--<com.perdev.viewlib.widget.PieChartView-->
+  <!--android:id="@+id/pcv_am"-->
+  <!--android:layout_width="300dp"-->
+  <!--android:layout_height="200dp"-->
+  <!--android:background="#00f"-->
+  <!--android:visibility="gone"-->
+  <!--app:clockwise="false"-->
+  <!--app:pie_color="#fff"-->
+  <!--app:start_angle="180"-->
+  <!--/>-->
 
 
   <com.perdev.viewlib.widget.DialProcessBar
     android:id="@+id/dpb_am"
-    app:dark="#393"
-    app:light="#0f0"
     android:layout_width="300dp"
     android:layout_height="400dp"
-    android:background="#933"/>
+    android:background="#933"
+    app:dark_color="#333"
+    app:light_color="#0f0"
+    app:scale_num="60"
+    app:show_pointer="true"/>
 
 </LinearLayout>

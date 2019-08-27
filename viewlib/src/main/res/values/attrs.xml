@@ -12,8 +12,13 @@
 
   <declare-styleable name="DialProcessBar">
     <attr format="color"
-      name="dark"/><!--暗色-->
+      name="dark_color"/><!--暗色-->
     <attr format="color"
-      name="light"/><!--亮色-->
+      name="light_color"/><!--亮色-->
+    <attr format="integer"
+      name="scale_num"/><!--刻度条数量-->
+    <attr format="boolean"
+      name="show_pointer"/><!--是否显示指针-->
+
   </declare-styleable>
 </resources>

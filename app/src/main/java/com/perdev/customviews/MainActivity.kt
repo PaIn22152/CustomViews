@@ -12,9 +12,9 @@ class MainActivity : AppCompatActivity() {
     val handler = Handler()
     var run: Runnable = object : Runnable {
         override fun run() {
-            if (p <= 100) {
+            if (p <= 60) {
                 dpb_am.setProcess(p++)
-                handler.postDelayed(this, 50)
+                handler.postDelayed(this, 1000)
             }
 
         }
@@ -26,13 +26,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        pcv_am.setMax(100)
-        pcv_am.addProgress(50, Color.parseColor("#991100"))
-        pcv_am.addProgress(20, Color.parseColor("#003366"))
+//        pcv_am.setMax(100)
+//        pcv_am.addProgress(50, Color.parseColor("#991100"))
+//        pcv_am.addProgress(20, Color.parseColor("#003366"))
 
 
-        dpb_am.setMax(100)
-        handler.postDelayed(run, 50)
+        dpb_am.setMax(60)
+        handler.post(run)
 
 
     }
