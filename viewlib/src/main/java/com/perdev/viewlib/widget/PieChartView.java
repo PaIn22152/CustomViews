@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Paint.Style;
 import android.graphics.RectF;
 import android.support.annotation.ColorInt;
 import android.util.AttributeSet;
@@ -28,16 +27,18 @@ public class PieChartView extends BaseView {
     private Paint progressPaint;//进度扇形
 
 
-    private int           max          = 360;
-    private List<Integer> colorList    = new ArrayList<>();
-    private List<Integer> progressList = new ArrayList<>();
+    private int           max = 360;
+    private List<Integer> colorList;
+    private List<Integer> progressList;
 
     private static final int     DEF_PIE_COLOR   = Color.parseColor("#999999");
     private static final int     DEF_PRO_COLOR   = Color.parseColor("#666666");
     private static final int     DEF_START_ANGLE = -90;//默认在最上方开始，-90度
     private static final boolean DEF_CLOCKWISE   = true;//顺时针
 
-    //    private int     startAngle = DEF_START_ANGLE;不能在这里设置默认值，否则在xml里面配置的值不生效
+
+    //    不能在这里设置默认值，否则在xml里面配置的值不生效
+    //    private int     startAngle = DEF_START_ANGLE;
     private int     startAngle;
     private int     pieColor;
     private boolean clockwise;
@@ -60,21 +61,25 @@ public class PieChartView extends BaseView {
     @Override
     protected void init(Context context, AttributeSet attrs, int defStyleAttr) {
         super.init(context, attrs, defStyleAttr);
-
         d("init  attrs = " + attrs);
 
-        if (attrs != null) {
-            TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.PieChartView);
-            pieColor = ta.getColor(R.styleable.PieChartView_pie_color, DEF_PIE_COLOR);
-            clockwise = ta.getBoolean(R.styleable.PieChartView_clockwise, DEF_CLOCKWISE);
-            startAngle = ta.getInteger(R.styleable.PieChartView_start_angle, DEF_START_ANGLE);
-            ta.recycle();
-
-//            d("init  startAngle = " + startAngle);
-        }
+        colorList = new ArrayList<>();
+        progressList = new ArrayList<>();
 
         piePaint = getAvailablePaint(pieColor);
         progressPaint = getAvailablePaint(proColor);
+    }
+
+    @Override
+    protected int[] styleable() {
+        return R.styleable.PieChartView;
+    }
+
+    @Override
+    protected void typed(TypedArray ta) {
+        pieColor = ta.getColor(R.styleable.PieChartView_pie_color, DEF_PIE_COLOR);
+        clockwise = ta.getBoolean(R.styleable.PieChartView_clockwise, DEF_CLOCKWISE);
+        startAngle = ta.getInteger(R.styleable.PieChartView_start_angle, DEF_START_ANGLE);
     }
 
     @Override

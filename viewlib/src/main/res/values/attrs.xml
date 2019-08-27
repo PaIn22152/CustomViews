@@ -8,4 +8,12 @@
     <attr format="integer"
       name="start_angle"/><!--起始点角度-->
   </declare-styleable>
+
+
+  <declare-styleable name="DialProcessBar">
+    <attr format="color"
+      name="dark"/><!--暗色-->
+    <attr format="color"
+      name="light"/><!--亮色-->
+  </declare-styleable>
 </resources>

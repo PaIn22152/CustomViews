@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".MainActivity">
 
-    <com.perdev.viewlib.widget.PieChartView
-      android:id="@+id/pcv_am"
-      android:background="#00f"
-      app:clockwise="false"
-      app:pie_color="#fff"
-      app:start_angle="180"
-      android:layout_width="300dp"
-      android:layout_height="200dp"
-      />
+  <com.perdev.viewlib.widget.PieChartView
+    android:id="@+id/pcv_am"
+    android:layout_width="300dp"
+    android:visibility="gone"
+    android:layout_height="200dp"
+    android:background="#00f"
+    app:clockwise="false"
+    app:pie_color="#fff"
+    app:start_angle="180"
+    />
 
-</RelativeLayout>
+
+  <com.perdev.viewlib.widget.DialProcessBar
+    android:id="@+id/dpb_am"
+    app:dark="#393"
+    app:light="#0f0"
+    android:layout_width="300dp"
+    android:layout_height="400dp"
+    android:background="#933"/>
+
+</LinearLayout>

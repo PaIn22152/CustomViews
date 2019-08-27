@@ -1,6 +1,7 @@
 package com.perdev.viewlib.widget;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import com.perdev.viewlib.utils.L;
@@ -38,8 +39,25 @@ public abstract class BaseView extends View {
 
     protected void init(Context context, AttributeSet attrs, int defStyleAttr) {
         mContext = context;
+        if (attrs != null && styleable() != null) {
+            if (styleable().length == 1 && styleable()[0] == 0) {//默认没有传值
+
+            } else {
+                try {
+                    TypedArray ta = mContext.obtainStyledAttributes(attrs, styleable());
+                    typed(ta);
+                    ta.recycle();
+                } catch (Exception e) {
+                    L.e(e);
+                }
+            }
+        }
         post(this::onViewFinished);
     }
+
+    protected abstract int[] styleable();
+
+    protected abstract void typed(TypedArray ta);
 
     /**
      * view绘制完成
