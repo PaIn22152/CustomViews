@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="PieChartView">
+    <attr format="boolean"
+      name="clockwise"/><!--顺时针-->
+    <attr format="color"
+      name="pie_color"/><!--背景色-->
+    <attr format="integer"
+      name="start_angle"/><!--起始点角度-->
+  </declare-styleable>
+</resources>
