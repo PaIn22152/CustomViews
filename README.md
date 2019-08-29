@@ -3,7 +3,7 @@
 
 
 饼状图
-http://github.com/PaIn22152/CustomViews/imgs/饼状图.png
+https://github.com/PaIn22152/CustomViews/blob/master/imgs/%E9%A5%BC%E7%8A%B6%E5%9B%BE.png
 
 表盘进度
 
