@@ -5,7 +5,7 @@
 饼状图
 https://github.com/PaIn22152/CustomViews/blob/master/imgs/pic1.png
 
-http://github.com/PaIn22152/CustomViews/raw/master/imgs/pic1.jpg
+ ![image](http://github.com/PaIn22152/CustomViews/raw/master/imgs/pic1.jpg)
 
 表盘进度
 
