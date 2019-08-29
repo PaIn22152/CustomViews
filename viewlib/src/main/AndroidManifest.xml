@@ -3,6 +3,8 @@
   package="com.perdev.viewlib">
 
   <application>
+    <activity android:name=".test.JavaActivity">
+    </activity>
     <activity android:name=".test.TestActivity">
     </activity>
   </application>

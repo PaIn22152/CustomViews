@@ -1,24 +1,16 @@
 package com.perdev.customviews
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.view.View
+import com.perdev.viewlib.test.TestActivity
+import kotlinx.android.synthetic.main.activity_dial.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-    var p = 0
-    val handler = Handler()
-    var run: Runnable = object : Runnable {
-        override fun run() {
-            if (p <= 60) {
-                dpb_am.setProcess(p++)
-                handler.postDelayed(this, 1000)
-            }
-
-        }
-    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,13 +18,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-//        pcv_am.setMax(100)
-//        pcv_am.addProgress(50, Color.parseColor("#991100"))
-//        pcv_am.addProgress(20, Color.parseColor("#003366"))
 
-
-        dpb_am.setMax(60)
-        handler.post(run)
+        tv_am_pie.setOnClickListener {
+            startActivity(Intent(this, PieActivity::class.java))
+        }
+        tv_am_dial.setOnClickListener {
+            startActivity(Intent(this, DialActivity::class.java))
+        }
 
 
     }

@@ -19,15 +19,27 @@
   <!--app:start_angle="180"-->
   <!--/>-->
 
+  <TextView
+    android:layout_marginTop="10dp"
+    android:background="#336666"
+    android:text="饼状图"
+    android:textColor="#ffffff"
+    android:gravity="center"
+    android:id="@+id/tv_am_pie"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"/>
 
-  <com.perdev.viewlib.widget.DialProcessBar
-    android:id="@+id/dpb_am"
-    android:layout_width="300dp"
-    android:layout_height="400dp"
-    android:background="#933"
-    app:dark_color="#333"
-    app:light_color="#0f0"
-    app:scale_num="60"
-    app:show_pointer="true"/>
+  <TextView
+    android:textColor="#ffffff"
+    android:layout_marginTop="10dp"
+    android:text="表盘进度条"
+    android:background="#666633"
+    android:gravity="center"
+    android:id="@+id/tv_am_dial"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"/>
+
+
+
 
 </LinearLayout>
