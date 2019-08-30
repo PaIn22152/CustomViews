@@ -39,6 +39,16 @@
     android:layout_width="match_parent"
     android:layout_height="50dp"/>
 
+  <TextView
+    android:textColor="#ffffff"
+    android:layout_marginTop="10dp"
+    android:text="圆角layout"
+    android:background="#006633"
+    android:gravity="center"
+    android:id="@+id/tv_am_rcl"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"/>
+
 
 
 

@@ -1,13 +1,8 @@
 package com.perdev.customviews
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
 import android.support.v7.app.AppCompatActivity
-import android.view.View
-import com.perdev.viewlib.test.TestActivity
-import kotlinx.android.synthetic.main.activity_dial.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         }
         tv_am_dial.setOnClickListener {
             startActivity(Intent(this, DialActivity::class.java))
+        }
+        tv_am_rcl.setOnClickListener {
+            startActivity(Intent(this, RCLayoutActivity::class.java))
         }
 
 
