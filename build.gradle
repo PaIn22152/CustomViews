@@ -21,6 +21,18 @@ allprojects {
         jcenter()
 
     }
+
+    ext {
+        butterKnifeVer = "10.1.0"
+        rxKotlinVer = "2.4.0-RC3"
+//    rxJavaVer="3.0.0-RC1"
+        rxJavaVer = "2.2.10"
+        rxAndroidVer = "2.1.1"
+        rxBindingVer = "3.0.0"
+        loggerVer = "2.2.0"
+        androidAsyncVer = "2.+"
+        rxBusVer = "1.0.6"
+    }
 }
 
 task clean(type: Delete) {

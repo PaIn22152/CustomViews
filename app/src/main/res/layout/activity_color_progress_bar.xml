@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".ColorProgressBarActivity">
+
+  <com.perdev.viewlib.widget.ColorProgressBar
+    android:id="@+id/cpb_acpb_p"
+    android:layout_width="300dp"
+    android:layout_height="20dp"
+    android:layout_centerInParent="true"
+    android:background="@color/gb_1"
+    app:max="50"
+    app:progress="20"/>
+
+</RelativeLayout>

@@ -7,7 +7,6 @@ import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,6 +24,9 @@ class MainActivity : AppCompatActivity() {
         }
         tv_am_ccv.setOnClickListener {
             startActivity<CornerCoverActivity>()
+        }
+        tv_am_cpb.setOnClickListener {
+            startActivity<ColorProgressBarActivity>()
         }
 
 

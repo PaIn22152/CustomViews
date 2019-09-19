@@ -35,6 +35,13 @@
   </declare-styleable>
   <!--CornerCoverView end -->
 
+  <!--ColorProgressBar  start -->
+  <declare-styleable name="ColorProgressBar">
+    <attr format="integer" name="max"/><!--最大值-->
+    <attr format="integer" name="progress"/><!--进度-->
+  </declare-styleable>
+  <!--ColorProgressBar  end -->
+
 
   <!--RCRelativeLayout  start -->
   <!-- *公共属性* -->

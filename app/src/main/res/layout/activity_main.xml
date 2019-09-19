@@ -58,13 +58,13 @@
         android:textColor="#ffffff"/>
 
       <TextView
-        android:id="@+id/tv_am_2"
+        android:id="@+id/tv_am_cpb"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="#006633"
+        android:background="@color/blue_1"
         android:gravity="center"
-        android:text="test"
+        android:text="彩色进度条"
         android:textColor="#ffffff"/>
 
       <TextView

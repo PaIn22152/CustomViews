@@ -3,18 +3,19 @@ package com.perdev.viewlib.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.RelativeLayout;
 import com.perdev.viewlib.utils.L;
 
 /**
- * Project    CustomViews
+ * Project    CustomViews-git
  * Path       com.perdev.viewlib.widget
- * Date       2019/08/27 - 10:06
+ * Date       2019/09/19 - 11:45
  * Author     Payne.
  * About      类描述：
  */
-public abstract class BaseView extends View {
-
+public abstract class BaseRelativeLayout extends RelativeLayout {
 
     protected Context mContext;
 
@@ -23,16 +24,18 @@ public abstract class BaseView extends View {
     protected int     minWH     = 0;
     protected boolean mAttached = false;
 
+    protected View mRootView = null;
 
-    public BaseView(Context context) {
+
+    public BaseRelativeLayout(Context context) {
         this(context, null);
     }
 
-    public BaseView(Context context, AttributeSet attrs) {
+    public BaseRelativeLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public BaseView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public BaseRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         mContext = context;
@@ -59,10 +62,15 @@ public abstract class BaseView extends View {
                 }
             }
         }
+        if (rootViewRes() != 0) {
+            mRootView = LayoutInflater.from(mContext).inflate(rootViewRes(), this, true);
+        }
         post(this::onViewFinished);
     }
 
     protected abstract int[] styleable();
+
+    protected abstract int rootViewRes();
 
     protected abstract void typed(TypedArray ta);
 
@@ -70,7 +78,6 @@ public abstract class BaseView extends View {
      * view绘制完成
      */
     protected abstract void onViewFinished();
-
 
     protected void d(String s) {
         String simpleName = this.getClass().getSimpleName() + "   ";
@@ -89,11 +96,9 @@ public abstract class BaseView extends View {
 
     }
 
-
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-
         mAttached = true;
         d("onAttachedToWindow ");
     }
