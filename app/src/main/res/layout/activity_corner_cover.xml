@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/rb_1"
+  tools:context=".CornerCoverActivity">
+
+
+  <RelativeLayout
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_centerInParent="true">
+
+    <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scaleType="fitXY"
+      android:src="@mipmap/panda"/>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:background="#334422"
+      android:text="@string/test_text"
+      android:textColor="#ffffff"/>
+
+
+    <com.perdev.viewlib.widget.CornerCoverView
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      app:corner_color="@color/rb_1"/>
+
+    <com.perdev.viewlib.widget.CornerCoverView
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_alignParentRight="true"
+      app:corner_color="@color/red_3"
+      app:corner_dir="2"
+      app:corner_type="cir"/>
+
+    <com.perdev.viewlib.widget.CornerCoverView
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_alignParentBottom="true"
+      app:corner_color="@color/rb_1"
+      app:corner_dir="3"
+      app:corner_type="tri"/>
+
+    <com.perdev.viewlib.widget.CornerCoverView
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentRight="true"
+      app:corner_color="@color/blue_2"
+      app:corner_dir="4"
+      app:corner_type="tri"/>
+
+
+  </RelativeLayout>
+
+
+</RelativeLayout>

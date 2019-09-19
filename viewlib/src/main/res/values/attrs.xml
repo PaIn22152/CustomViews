@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+  <!--PieChartView  start -->
   <declare-styleable name="PieChartView">
     <attr format="boolean"
       name="clockwise"/><!--顺时针-->
@@ -8,8 +10,10 @@
     <attr format="integer"
       name="start_angle"/><!--起始点角度-->
   </declare-styleable>
+  <!--PieChartView  end -->
 
 
+  <!--DialProcessBar  start -->
   <declare-styleable name="DialProcessBar">
     <attr format="color"
       name="dark_color"/><!--暗色-->
@@ -19,67 +23,77 @@
       name="scale_num"/><!--刻度条数量-->
     <attr format="boolean"
       name="show_pointer"/><!--是否显示指针-->
-
   </declare-styleable>
+  <!--DialProcessBar  end -->
 
 
+  <!--CornerCoverView  start -->
+  <declare-styleable name="CornerCoverView">
+    <attr format="string" name="corner_type"/><!--遮盖类型  circular圆角    triangle三角形-->
+    <attr format="color" name="corner_color"/><!--遮盖颜色-->
+    <attr format="integer" name="corner_dir"/><!--遮盖方向 1topleft   2topright   3bottomleft   4bottomright-->
+  </declare-styleable>
+  <!--CornerCoverView end -->
 
 
-
+  <!--RCRelativeLayout  start -->
   <!-- *公共属性* -->
   <!--圆形-->
-  <attr name="round_as_circle" format="boolean" />
+  <attr format="boolean" name="round_as_circle"/>
   <!--全部圆角半径-->
-  <attr name="round_corner" format="integer|dimension" />
+  <attr format="integer|dimension" name="round_corner"/>
   <!--针对各个角的半径-->
-  <attr name="round_corner_top_left" format="integer|dimension" />
-  <attr name="round_corner_top_right" format="integer|dimension" />
-  <attr name="round_corner_bottom_left" format="integer|dimension" />
-  <attr name="round_corner_bottom_right" format="integer|dimension" />
+  <attr format="integer|dimension" name="round_corner_top_left"/>
+  <attr format="integer|dimension" name="round_corner_top_right"/>
+  <attr format="integer|dimension" name="round_corner_bottom_left"/>
+  <attr format="integer|dimension" name="round_corner_bottom_right"/>
 
   <!--描边颜色／半径-->
-  <attr name="stroke_color" format="color|reference" />
-  <attr name="stroke_width" format="integer|dimension" />
+  <attr format="color|reference" name="stroke_color"/>
+  <attr format="integer|dimension" name="stroke_width"/>
 
   <!-- 是否剪裁 RCLayout 的背景 -->
-  <attr name="clip_background" format="boolean" />
+  <attr format="boolean" name="clip_background"/>
 
   <!--真正用于解析的属性-->
   <declare-styleable name="RCAttrs">
-    <attr name="round_as_circle" />
-    <attr name="round_corner" />
-    <attr name="round_corner_top_left" />
-    <attr name="round_corner_top_right" />
-    <attr name="round_corner_bottom_left" />
-    <attr name="round_corner_bottom_right" />
-    <attr name="stroke_color" />
-    <attr name="stroke_width" />
-    <attr name="clip_background" />
+    <attr name="round_as_circle"/>
+    <attr name="round_corner"/>
+    <attr name="round_corner_top_left"/>
+    <attr name="round_corner_top_right"/>
+    <attr name="round_corner_bottom_left"/>
+    <attr name="round_corner_bottom_right"/>
+    <attr name="stroke_color"/>
+    <attr name="stroke_width"/>
+    <attr name="clip_background"/>
   </declare-styleable>
 
   <!--假体：用于提示-->
   <declare-styleable name="RCRelativeLayout">
-    <attr name="round_as_circle" />
-    <attr name="round_corner" />
-    <attr name="round_corner_top_left" />
-    <attr name="round_corner_top_right" />
-    <attr name="round_corner_bottom_left" />
-    <attr name="round_corner_bottom_right" />
-    <attr name="stroke_color" />
-    <attr name="stroke_width" />
-    <attr name="clip_background" />
+    <attr name="round_as_circle"/>
+    <attr name="round_corner"/>
+    <attr name="round_corner_top_left"/>
+    <attr name="round_corner_top_right"/>
+    <attr name="round_corner_bottom_left"/>
+    <attr name="round_corner_bottom_right"/>
+    <attr name="stroke_color"/>
+    <attr name="stroke_width"/>
+    <attr name="clip_background"/>
   </declare-styleable>
 
   <!--假体：用于提示-->
   <declare-styleable name="RCImageView">
-    <attr name="round_as_circle" />
-    <attr name="round_corner" />
-    <attr name="round_corner_top_left" />
-    <attr name="round_corner_top_right" />
-    <attr name="round_corner_bottom_left" />
-    <attr name="round_corner_bottom_right" />
-    <attr name="stroke_color" />
-    <attr name="stroke_width" />
-    <attr name="clip_background" />
+    <attr name="round_as_circle"/>
+    <attr name="round_corner"/>
+    <attr name="round_corner_top_left"/>
+    <attr name="round_corner_top_right"/>
+    <attr name="round_corner_bottom_left"/>
+    <attr name="round_corner_bottom_right"/>
+    <attr name="stroke_color"/>
+    <attr name="stroke_width"/>
+    <attr name="clip_background"/>
   </declare-styleable>
+  <!--RCRelativeLayout  end -->
+
+
 </resources>

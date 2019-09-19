@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">CustomViews</string>
+
+  <string name="test_text">Dream as if you will live forever. Live as if you will die today</string>
 </resources>

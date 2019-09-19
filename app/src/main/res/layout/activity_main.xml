@@ -1,55 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="vertical"
   tools:context=".MainActivity">
 
-  <!--<com.perdev.viewlib.widget.PieChartView-->
-  <!--android:id="@+id/pcv_am"-->
-  <!--android:layout_width="300dp"-->
-  <!--android:layout_height="200dp"-->
-  <!--android:background="#00f"-->
-  <!--android:visibility="gone"-->
-  <!--app:clockwise="false"-->
-  <!--app:pie_color="#fff"-->
-  <!--app:start_angle="180"-->
-  <!--/>-->
 
-  <TextView
-    android:layout_marginTop="10dp"
-    android:background="#336666"
-    android:text="饼状图"
-    android:textColor="#ffffff"
-    android:gravity="center"
-    android:id="@+id/tv_am_pie"
+  <android.support.v4.widget.NestedScrollView
     android:layout_width="match_parent"
-    android:layout_height="50dp"/>
+    android:layout_height="wrap_content">
 
-  <TextView
-    android:textColor="#ffffff"
-    android:layout_marginTop="10dp"
-    android:text="表盘进度条"
-    android:background="#666633"
-    android:gravity="center"
-    android:id="@+id/tv_am_dial"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"/>
+    <android.support.v7.widget.LinearLayoutCompat
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
 
-  <TextView
-    android:textColor="#ffffff"
-    android:layout_marginTop="10dp"
-    android:text="圆角layout"
-    android:background="#006633"
-    android:gravity="center"
-    android:id="@+id/tv_am_rcl"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"/>
+      <TextView
+        android:id="@+id/tv_am_pie"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#336666"
+        android:gravity="center"
+        android:text="饼状图"
+        android:textColor="#ffffff"/>
+
+      <TextView
+        android:id="@+id/tv_am_dial"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#666633"
+        android:gravity="center"
+        android:text="表盘进度条"
+        android:textColor="#ffffff"/>
+
+      <TextView
+        android:id="@+id/tv_am_rcl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#006633"
+        android:gravity="center"
+        android:text="圆角layout"
+        android:textColor="#ffffff"/>
+
+      <TextView
+        android:id="@+id/tv_am_ccv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/rb_1"
+        android:gravity="center"
+        android:text="角落遮盖"
+        android:textColor="#ffffff"/>
+
+      <TextView
+        android:id="@+id/tv_am_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#006633"
+        android:gravity="center"
+        android:text="test"
+        android:textColor="#ffffff"/>
+
+      <TextView
+        android:id="@+id/tv_am_3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#006633"
+        android:gravity="center"
+        android:text="test"
+        android:textColor="#ffffff"/>
+
+      <TextView
+        android:id="@+id/tv_am_4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#006633"
+        android:gravity="center"
+        android:text="test"
+        android:textColor="#ffffff"/>
+
+      <TextView
+        android:id="@+id/tv_am_5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#006633"
+        android:gravity="center"
+        android:text="test"
+        android:textColor="#ffffff"/>
+
+      <TextView
+        android:id="@+id/tv_am_6"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#006633"
+        android:gravity="center"
+        android:text="test"
+        android:textColor="#ffffff"/>
+
+      <TextView
+        android:id="@+id/tv_am_7"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#006633"
+        android:gravity="center"
+        android:text="test"
+        android:textColor="#ffffff"/>
 
 
+    </android.support.v7.widget.LinearLayoutCompat>
+
+  </android.support.v4.widget.NestedScrollView>
 
 
 </LinearLayout>

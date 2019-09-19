@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+  <color name="colorPrimary">#008577</color>
+  <color name="colorPrimaryDark">#00574B</color>
+  <color name="colorAccent">#D81B60</color>
 
 
-    <color name="test">#999999</color>
+  <color name="test">#999999</color>
+
+
+  <color name="red_1">#990000</color>
+  <color name="red_2">#660000</color>
+  <color name="red_3">#330000</color>
+
+  <color name="green_1">#009900</color>
+  <color name="green_2">#006600</color>
+  <color name="green_3">#003300</color>
+
+  <color name="blue_1">#000099</color>
+  <color name="blue_2">#000066</color>
+  <color name="blue_3">#000033</color>
+
+
+  <color name="gb_1">#009999</color>
+  <color name="gb_2">#006666</color>
+  <color name="gb_3">#003333</color>
+
+  <color name="rgg_1">#999900</color>
+  <color name="rgg_2">#666600</color>
+  <color name="rgg_3">#333300</color>
+
+  <color name="rb_1">#990099</color>
+  <color name="rb_2">#660066</color>
+  <color name="rb_3">#330033</color>
+
 </resources>

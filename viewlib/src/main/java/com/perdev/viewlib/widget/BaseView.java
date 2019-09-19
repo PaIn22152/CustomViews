@@ -43,12 +43,17 @@ public abstract class BaseView extends View {
             if (styleable().length == 1 && styleable()[0] == 0) {//默认没有传值
 
             } else {
+                TypedArray ta = null;
                 try {
-                    TypedArray ta = mContext.obtainStyledAttributes(attrs, styleable());
+                    ta = mContext.obtainStyledAttributes(attrs, styleable());
                     typed(ta);
-                    ta.recycle();
+//                ta.recycle();
                 } catch (Exception e) {
                     L.e(e);
+                } finally {
+                    if (ta != null) {
+                        ta.recycle();
+                    }
                 }
             }
         }

@@ -1,9 +1,9 @@
 package com.perdev.customviews
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,13 +15,16 @@ class MainActivity : AppCompatActivity() {
 
 
         tv_am_pie.setOnClickListener {
-            startActivity(Intent(this, PieActivity::class.java))
+            startActivity<PieActivity>()
         }
         tv_am_dial.setOnClickListener {
-            startActivity(Intent(this, DialActivity::class.java))
+            startActivity<DialActivity>()
         }
         tv_am_rcl.setOnClickListener {
-            startActivity(Intent(this, RCLayoutActivity::class.java))
+            startActivity<RCLayoutActivity>()
+        }
+        tv_am_ccv.setOnClickListener {
+            startActivity<CornerCoverActivity>()
         }
 
 
