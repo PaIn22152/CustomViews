@@ -85,14 +85,14 @@ public class ColorProgressBar extends BaseRelativeLayout {
             if (progress > max) {
                 progress = max;
             }
-            d(" updateProgressUI  max = " + max + "   p = " + progress);
+//            d(" updateProgressUI  max = " + max + "   p = " + progress);
             int maxWidth = iv_vcpb_bg.getMeasuredWidth();
-            d(" maxWidth = " + maxWidth);
+//            d(" maxWidth = " + maxWidth);
             int rightMargin = (max - progress)  * maxWidth / max;
-            d(" rightMargin = " + rightMargin);
-            d(" 111 x = " + iv_vcpb_progress.getX());
+//            d(" rightMargin = " + rightMargin);
+//            d(" 111 x = " + iv_vcpb_progress.getX());
             iv_vcpb_progress.setX(-rightMargin);
-            d(" 222 x = " + iv_vcpb_progress.getX());
+//            d(" 222 x = " + iv_vcpb_progress.getX());
         }
     }
 }

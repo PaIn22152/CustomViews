@@ -68,13 +68,13 @@
         android:textColor="#ffffff"/>
 
       <TextView
-        android:id="@+id/tv_am_3"
+        android:id="@+id/tv_am_bitmap"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:background="#006633"
         android:gravity="center"
-        android:text="test"
+        android:text="图片滤镜"
         android:textColor="#ffffff"/>
 
       <TextView

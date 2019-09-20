@@ -28,6 +28,9 @@ class MainActivity : AppCompatActivity() {
         tv_am_cpb.setOnClickListener {
             startActivity<ColorProgressBarActivity>()
         }
+        tv_am_bitmap.setOnClickListener {
+            startActivity<BitmapFilterActivity>()
+        }
 
 
     }

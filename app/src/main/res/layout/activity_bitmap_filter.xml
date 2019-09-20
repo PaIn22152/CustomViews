@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:background="@color/gb_2"
+  tools:context=".BitmapFilterActivity">
+
+  <ImageView
+    android:id="@+id/iv_abf_1"
+    android:src="@mipmap/bb1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <ImageView
+    android:id="@+id/iv_abf_2"
+    android:src="@mipmap/panda"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <TextView
+    android:padding="20dp"
+    android:id="@+id/tv_abf_filter"
+    android:text="图片滤镜"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

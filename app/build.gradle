@@ -50,5 +50,5 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVer"
     //RXAndroid
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVer"
-    
+
 }
