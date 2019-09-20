@@ -28,7 +28,8 @@ class BitmapFilterActivity : AppCompatActivity() {
         )
         out1 = Bitmap.createBitmap(
             org1.getWidth(),
-            org1.getHeight(), Bitmap.Config.ARGB_8888
+            org1.getHeight(),
+            Bitmap.Config.ARGB_8888
         )
 
         var org2 = BitmapFactory.decodeResource(
@@ -37,12 +38,13 @@ class BitmapFilterActivity : AppCompatActivity() {
         )
         out2 = Bitmap.createBitmap(
             org2.getWidth(),
-            org2.getHeight(), Bitmap.Config.ARGB_8888
+            org2.getHeight(),
+            Bitmap.Config.ARGB_8888
         )
 
         tv_abf_filter.setOnClickListener {
             if (!filter) {
-                BitmapFilter.blackWhite(org1, out1)
+                BitmapFilter.cold(org1, out1)
                 iv_abf_1.setImageBitmap(out1)
 
                 BitmapFilter.blackWhite(org2, out2)

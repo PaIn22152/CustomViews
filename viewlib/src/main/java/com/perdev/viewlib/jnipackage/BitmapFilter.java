@@ -17,4 +17,9 @@ public class BitmapFilter {
 
     public static native void blackWhite(Bitmap input, Bitmap output);//黑白滤镜
 
+    public static native void warm(Bitmap input, Bitmap output);//黑白滤镜
+
+
+    public static native void cold(Bitmap input, Bitmap output);//黑白滤镜
+
 }
