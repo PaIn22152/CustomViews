@@ -5,28 +5,82 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:orientation="vertical"
   android:background="@color/gb_2"
-  tools:context=".BitmapFilterActivity">
+  android:orientation="vertical">
 
-  <ImageView
-    android:id="@+id/iv_abf_1"
-    android:src="@mipmap/bb1"
+  <LinearLayout
+    android:orientation="horizontal"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+    android:layout_height="wrap_content">
 
-  <ImageView
-    android:id="@+id/iv_abf_2"
-    android:src="@mipmap/panda"
+    <ImageView
+      android:id="@+id/iv_abf_1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:scaleType="centerCrop"
+      android:src="@mipmap/bb1"/>
+
+    <ImageView
+      android:layout_marginLeft="50dp"
+      android:id="@+id/iv_abf_2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:scaleType="centerCrop"
+      android:src="@mipmap/panda"/>
+
+
+  </LinearLayout>
+
+
+
+  <Button
+    android:layout_marginTop="30dp"
+    android:id="@+id/tv_abf_filter_1"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+    android:layout_height="wrap_content"
+    android:text="图片黑白滤镜"/>
 
-  <TextView
-    android:padding="20dp"
+  <Button
+    android:id="@+id/tv_abf_filter_2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="图片冷色滤镜"/>
+
+  <Button
+    android:id="@+id/tv_abf_filter_3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="图片暖色滤镜"/>
+
+  <Button
+    android:id="@+id/tv_abf_filter_4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="图片变暗滤镜"/>
+
+  <Button
+    android:id="@+id/tv_abf_filter_5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="图片左右镜像"/>
+
+  <Button
+    android:id="@+id/tv_abf_filter_6"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="图片颜色反转滤镜"/>
+
+  <Button
+    android:id="@+id/tv_abf_filter_7"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="图片test滤镜"/>
+
+  <Button
     android:id="@+id/tv_abf_filter"
-    android:text="图片滤镜"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+    android:layout_height="wrap_content"
+    android:text="原图"/>
 
 
 </LinearLayout>

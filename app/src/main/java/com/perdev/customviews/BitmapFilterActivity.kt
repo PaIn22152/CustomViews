@@ -10,8 +10,6 @@ import kotlinx.android.synthetic.main.activity_bitmap_filter.*
 class BitmapFilterActivity : AppCompatActivity() {
 
 
-    var filter = false
-
     var out1: Bitmap? = null
     var out2: Bitmap? = null
 
@@ -42,18 +40,67 @@ class BitmapFilterActivity : AppCompatActivity() {
             Bitmap.Config.ARGB_8888
         )
 
-        tv_abf_filter.setOnClickListener {
-            if (!filter) {
-                BitmapFilter.cold(org1, out1)
-                iv_abf_1.setImageBitmap(out1)
+        tv_abf_filter_1.setOnClickListener {
 
-                BitmapFilter.blackWhite(org2, out2)
-                iv_abf_2.setImageBitmap(out2)
-            } else {
-                iv_abf_1.setImageBitmap(org1)
-                iv_abf_2.setImageBitmap(org2)
-            }
-            filter = !filter
+            BitmapFilter.blackWhite(org1, out1)
+            iv_abf_1.setImageBitmap(out1)
+
+            BitmapFilter.blackWhite(org2, out2)
+            iv_abf_2.setImageBitmap(out2)
+
+        }
+
+        tv_abf_filter_2.setOnClickListener {
+            BitmapFilter.cold(org1, out1)
+            iv_abf_1.setImageBitmap(out1)
+
+            BitmapFilter.cold(org2, out2)
+            iv_abf_2.setImageBitmap(out2)
+        }
+
+        tv_abf_filter_3.setOnClickListener {
+            BitmapFilter.warm(org1, out1)
+            iv_abf_1.setImageBitmap(out1)
+
+            BitmapFilter.warm(org2, out2)
+            iv_abf_2.setImageBitmap(out2)
+        }
+
+        tv_abf_filter_4.setOnClickListener {
+            BitmapFilter.light(org1, out1,0.8)
+            iv_abf_1.setImageBitmap(out1)
+
+            BitmapFilter.light(org2, out2,0.8)
+            iv_abf_2.setImageBitmap(out2)
+        }
+
+        tv_abf_filter_5.setOnClickListener {
+            BitmapFilter.left2right(org1, out1)
+            iv_abf_1.setImageBitmap(out1)
+
+            BitmapFilter.left2right(org2, out2)
+            iv_abf_2.setImageBitmap(out2)
+        }
+
+        tv_abf_filter_6.setOnClickListener {
+            BitmapFilter.reversal(org1, out1)
+            iv_abf_1.setImageBitmap(out1)
+
+            BitmapFilter.reversal(org2, out2)
+            iv_abf_2.setImageBitmap(out2)
+        }
+
+        tv_abf_filter_7.setOnClickListener {
+            BitmapFilter.test(org1, out1)
+            iv_abf_1.setImageBitmap(out1)
+
+            BitmapFilter.test(org2, out2)
+            iv_abf_2.setImageBitmap(out2)
+        }
+
+        tv_abf_filter.setOnClickListener {
+            iv_abf_1.setImageBitmap(org1)
+            iv_abf_2.setImageBitmap(org2)
         }
     }
 }
