@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".ScreenAdaptActivity">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/tv_asa_sw"
+      android:layout_width="@dimen/dp_360"
+      android:layout_height="@dimen/dp_50"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/shape_corner_red"
+      android:gravity="center"
+      android:text="dp360*dp50    sp15"
+      android:textColor="@color/white"
+      android:textSize="@dimen/sp_15"/>
+
+
+
+    <TextView
+      android:layout_width="360dp"
+      android:layout_height="50dp"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/shape_corner_red"
+      android:gravity="center"
+      android:text="360dp*50dp    15sp"
+      android:textColor="@color/white"
+      android:textSize="15sp"/>
+
+  </LinearLayout>
+
+</RelativeLayout>
