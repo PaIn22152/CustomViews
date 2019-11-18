@@ -37,6 +37,9 @@ class MainActivity : AppCompatActivity() {
         tv_am_screen.setOnClickListener {
             startActivity<ScreenAdaptActivity>()
         }
+        tv_am_snow.setOnClickListener {
+            startActivity<SnowActivity>()
+        }
 
 
     }

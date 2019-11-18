@@ -26,18 +26,16 @@ class ScreenAdaptActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
-
         //今日头条
+        //在setContentView之前调用
 //        ScreenAdaptUtil.doDensity(this)
 
         setContentView(R.layout.activity_screen_adapt)
 
 
-
-
         //SW适配符
+        //通过ScreenMatch插件，生成values-sw360dp等文件夹，在xml中使用dimens下的值
 //        tv_asa_sw.setText("SW = " + SWUtil.getSW(this) + "dp")
-
 
     }
 }
