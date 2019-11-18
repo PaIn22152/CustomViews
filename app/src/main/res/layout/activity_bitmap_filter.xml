@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
@@ -9,78 +8,100 @@
   android:orientation="vertical">
 
   <LinearLayout
-    android:orientation="horizontal"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
     <ImageView
       android:id="@+id/iv_abf_1"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:scaleType="centerCrop"
-      android:src="@mipmap/bb1"/>
+      android:src="@mipmap/bb1" />
 
     <ImageView
-      android:layout_marginLeft="50dp"
       android:id="@+id/iv_abf_2"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_marginLeft="50dp"
       android:scaleType="centerCrop"
-      android:src="@mipmap/panda"/>
+      android:src="@mipmap/panda" />
 
 
   </LinearLayout>
 
-
-
   <Button
-    android:layout_marginTop="30dp"
     android:id="@+id/tv_abf_filter_1"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="图片黑白滤镜"/>
+    android:layout_marginTop="30dp"
+    android:text="图片黑白滤镜" />
 
   <Button
     android:id="@+id/tv_abf_filter_2"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="图片冷色滤镜"/>
+    android:text="图片冷色滤镜" />
+
 
   <Button
     android:id="@+id/tv_abf_filter_3"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="图片暖色滤镜"/>
+    android:text="图片暖色滤镜" />
 
-  <Button
-    android:id="@+id/tv_abf_filter_4"
-    android:layout_width="wrap_content"
+  <LinearLayout
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="图片变暗滤镜"/>
+    android:orientation="horizontal">
+
+    <EditText
+      android:id="@+id/et_abf_light"
+      android:layout_width="200dp"
+      android:inputType="numberDecimal"
+      android:layout_height="wrap_content"
+      android:hint="输入亮度（1=原图）" />
+
+    <Button
+      android:id="@+id/tv_abf_filter_4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="图片亮度调节滤镜" />
+
+
+
+
+  </LinearLayout>
 
   <Button
     android:id="@+id/tv_abf_filter_5"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="图片左右镜像"/>
+    android:text="图片左右镜像" />
 
   <Button
     android:id="@+id/tv_abf_filter_6"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="图片颜色反转滤镜"/>
+    android:text="图片颜色反转滤镜" />
 
   <Button
     android:id="@+id/tv_abf_filter_7"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="图片test滤镜"/>
+    android:text="图片test滤镜" />
+
 
   <Button
     android:id="@+id/tv_abf_filter"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="原图"/>
+    android:text="原图" />
+
+
+
+
+
 
 
 </LinearLayout>

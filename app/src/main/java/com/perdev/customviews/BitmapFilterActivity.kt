@@ -4,8 +4,11 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.perdev.viewlib.jnipackage.BitmapFilter
 import kotlinx.android.synthetic.main.activity_bitmap_filter.*
+import org.jetbrains.anko.toast
+import java.lang.Exception
 
 class BitmapFilterActivity : AppCompatActivity() {
 
@@ -67,11 +70,19 @@ class BitmapFilterActivity : AppCompatActivity() {
         }
 
         tv_abf_filter_4.setOnClickListener {
-            BitmapFilter.light(org1, out1,0.8)
-            iv_abf_1.setImageBitmap(out1)
 
-            BitmapFilter.light(org2, out2,0.8)
-            iv_abf_2.setImageBitmap(out2)
+            try {
+                val light = et_abf_light.text.toString().toDouble()
+
+                BitmapFilter.light(org1, out1, light)
+                iv_abf_1.setImageBitmap(out1)
+
+                BitmapFilter.light(org2, out2, light)
+                iv_abf_2.setImageBitmap(out2)
+            } catch (e: Exception) {
+                toast("输入错误")
+            }
+
         }
 
         tv_abf_filter_5.setOnClickListener {
