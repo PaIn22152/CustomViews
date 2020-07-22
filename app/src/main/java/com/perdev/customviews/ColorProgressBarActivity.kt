@@ -1,6 +1,6 @@
 package com.perdev.customviews
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.perdev.customviews.utils.RXCallback
 import com.perdev.customviews.utils.rxInterval

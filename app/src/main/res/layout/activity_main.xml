@@ -8,11 +8,11 @@
   tools:context=".MainActivity">
 
 
-  <android.support.v4.widget.NestedScrollView
+  <androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <android.support.v7.widget.LinearLayoutCompat
+    <androidx.appcompat.widget.LinearLayoutCompat
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="vertical">
@@ -118,9 +118,9 @@
         android:textColor="#ffffff"/>
 
 
-    </android.support.v7.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-  </android.support.v4.widget.NestedScrollView>
+  </androidx.core.widget.NestedScrollView>
 
 
 </LinearLayout>

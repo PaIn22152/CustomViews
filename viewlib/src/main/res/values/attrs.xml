@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+  <!--TabLayout  start-->
+  <declare-styleable name="TabLayout">
+    <attr name="tabRes" format="reference"/>
+  </declare-styleable>
+  <!--TabLayout  end-->
+
   <!--PieChartView  start -->
   <declare-styleable name="PieChartView">
     <attr format="boolean"

@@ -10,31 +10,22 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
-    <activity android:name=".SnowActivity">
-    </activity>
-    <activity android:name=".ScreenAdaptActivity">
-    </activity>
-    <activity android:name=".JavaTestActivity">
-    </activity>
-    <activity android:name=".ScrollTestActivity">
-    </activity>
-    <activity android:name=".BitmapFilterActivity">
-    </activity>
-    <activity android:name=".ColorProgressBarActivity">
-    </activity>
-    <activity android:name=".CornerCoverActivity">
-    </activity>
-    <activity android:name=".RCLayoutActivity">
-    </activity>
-    <activity android:name=".DialActivity">
-    </activity>
-    <activity android:name=".PieActivity">
-    </activity>
+    <activity android:name=".TabActivity"></activity>
+    <activity android:name=".SnowActivity"></activity>
+    <activity android:name=".ScreenAdaptActivity"></activity>
+    <activity android:name=".JavaTestActivity"></activity>
+    <activity android:name=".ScrollTestActivity"></activity>
+    <activity android:name=".BitmapFilterActivity"></activity>
+    <activity android:name=".ColorProgressBarActivity"></activity>
+    <activity android:name=".CornerCoverActivity"></activity>
+    <activity android:name=".RCLayoutActivity"></activity>
+    <activity android:name=".DialActivity"></activity>
+    <activity android:name=".PieActivity"></activity>
     <activity android:name=".MainActivity">
       <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
+        <action android:name="android.intent.action.MAIN" />
 
-        <category android:name="android.intent.category.LAUNCHER"/>
+        <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
   </application>

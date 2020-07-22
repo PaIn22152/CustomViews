@@ -6,7 +6,7 @@ import static android.view.WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class JavaTestActivity extends AppCompatActivity {
 

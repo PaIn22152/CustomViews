@@ -190,9 +190,9 @@ public class SnowBg2 extends SurfaceView implements SurfaceHolder.Callback, Runn
         Rect rect = new Rect();
         rect.left = x;
         rect.top = y;
-        rect.right = rect.left + size*2;
-        rect.bottom = rect.top + size*2;
-        canvas.drawBitmap(bitmaps[size % 4], null, rect, paint);
+        rect.right = rect.left + size * 2;
+        rect.bottom = rect.top + size * 2;
+        canvas.drawBitmap(bitmaps[size % bitmaps.length], null, rect, paint);
 
         //                canvas.drawBitmap(changeBitmapSize(points.get(i).snowflakePos, points.get(i).size),
 //                        points.get(i).point.x,

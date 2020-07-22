@@ -32,6 +32,7 @@ allprojects {
         loggerVer = "2.2.0"
         androidAsyncVer = "2.+"
         rxBusVer = "1.0.6"
+        viewpager2Ver = "1.0.0"
     }
 }
 
