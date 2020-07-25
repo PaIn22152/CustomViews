@@ -38,6 +38,12 @@ class MainActivity : AppCompatActivity() {
             startActivity<ScreenAdaptActivity>()
         }
 
+        tv_am_6.setOnClickListener {
+
+        }
+
+
+
 
     }
 }
