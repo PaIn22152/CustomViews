@@ -1,7 +1,7 @@
 package com.perdev.customviews
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.perdev.viewlib.utils.ScreenAdaptUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
@@ -36,6 +36,12 @@ class MainActivity : AppCompatActivity() {
         }
         tv_am_screen.setOnClickListener {
             startActivity<ScreenAdaptActivity>()
+        }
+        tv_am_snow.setOnClickListener {
+            startActivity<SnowActivity>()
+        }
+        tv_am_7.setOnClickListener {
+            startActivity<TabActivity>()
         }
 
         tv_am_6.setOnClickListener {
