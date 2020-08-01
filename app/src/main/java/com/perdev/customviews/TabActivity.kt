@@ -13,9 +13,9 @@ class TabActivity : AppCompatActivity() {
         setContentView(R.layout.activity_tab)
 
         var title: ArrayList<String> = ArrayList()
-        title.add("t1")
+        title.add("好长好长好长的文字")
         title.add("t2")
-        title.add("t3")
+        title.add("短")
         title.add("t4")
         tl_at_tab.setTitle(title)
 
@@ -38,7 +38,12 @@ class TabActivity : AppCompatActivity() {
                 selectView: TextView?,
                 othersView: MutableList<TextView>?
             ) {
-
+                //可以使用此回掉，对tab里面的title做个性化处理
+//                selectView!!.animate().scaleX(1.2f).scaleY(1.2f).setDuration(300L).start()
+//                for (view in othersView!!) {
+//                    view.scaleX = 1f
+//                    view.scaleY = 1f
+//                }
             }
         })
     }

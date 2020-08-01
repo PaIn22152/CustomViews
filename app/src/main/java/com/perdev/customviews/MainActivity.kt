@@ -44,9 +44,7 @@ class MainActivity : AppCompatActivity() {
             startActivity<TabActivity>()
         }
 
-        tv_am_6.setOnClickListener {
 
-        }
 
 
 

@@ -14,8 +14,8 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Xfermode;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
-import android.support.annotation.ColorInt;
 import android.util.AttributeSet;
+import androidx.annotation.ColorInt;
 
 /**
  * Project    CustomViews-git

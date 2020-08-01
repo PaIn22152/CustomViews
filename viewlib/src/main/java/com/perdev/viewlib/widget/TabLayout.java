@@ -8,18 +8,14 @@ import android.graphics.drawable.Drawable;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 import androidx.viewpager2.widget.ViewPager2;
-import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback;
 import com.perdev.viewlib.R;
 import com.perdev.viewlib.utils.PixelUtil;
 import java.util.ArrayList;
@@ -81,6 +77,7 @@ public class TabLayout extends BaseRelativeLayout {
     private int          titleUnselectColor = Color.parseColor("#dddd55");
     private List<String> titleList          = new ArrayList<>();
     private int          selectedPosition   = 0;
+    private float        selectedScale      = 1.2f;
 
 
     @Override
@@ -117,7 +114,7 @@ public class TabLayout extends BaseRelativeLayout {
 
     }
 
-    private TextView getTextView(String content) {
+    private TextView createTextView(String content) {
         TextView view = new TextView(mContext);
         view.setText(content);
         view.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleSize);
@@ -130,7 +127,7 @@ public class TabLayout extends BaseRelativeLayout {
         ll_vtl_container.removeAllViews();
         titleViews.clear();
         for (int i = 0; i < titleList.size(); i++) {
-            TextView view = getTextView(titleList.get(i));
+            TextView view = createTextView(titleList.get(i));
             view.setTextColor(i == selectedPosition ? titleSelectColor : titleUnselectColor);
             ll_vtl_container.addView(view);
             titleViews.add(view);
@@ -182,6 +179,9 @@ public class TabLayout extends BaseRelativeLayout {
                     viewPager.setCurrentItem(finalI);
                 });
             }
+
+            int currentItem = viewPager.getCurrentItem();
+            pageScrolled(currentItem, 0, 0);
         });
     }
 
@@ -215,6 +215,10 @@ public class TabLayout extends BaseRelativeLayout {
                     viewPager2.setCurrentItem(finalI);
                 });
             }
+
+            int currentItem = viewPager2.getCurrentItem();
+            pageScrolled(currentItem, 0, 0);
+
         });
     }
 
@@ -240,17 +244,29 @@ public class TabLayout extends BaseRelativeLayout {
         tv_vtl_tab.setLayoutParams(tabLP);
 
         ArgbEvaluator evaluator = new ArgbEvaluator();
-        int left = (int) evaluator
+        int leftColor = (int) evaluator
                 .evaluate(positionOffset, titleSelectColor, titleUnselectColor);
-        int right = (int) evaluator
+        int rightColor = (int) evaluator
                 .evaluate(positionOffset, titleUnselectColor, titleSelectColor);
+
+        float leftScale = 1f + (1 - positionOffset) * (selectedScale - 1);
+        float rightScale = 1f + (positionOffset) * (selectedScale - 1);
+
         for (int i = 0; i < titleViews.size(); i++) {
             titleViews.get(i).setTextColor(titleUnselectColor);
+            titleViews.get(i).setScaleX(1f);
+            titleViews.get(i).setScaleY(1f);
             if (position < titleViews.size() - 1) {
-                titleViews.get(position).setTextColor(left);
-                titleViews.get(position + 1).setTextColor(right);
+                titleViews.get(position).setTextColor(leftColor);
+                titleViews.get(position).setScaleX(leftScale);
+                titleViews.get(position).setScaleY(leftScale);
+                titleViews.get(position + 1).setTextColor(rightColor);
+                titleViews.get(position + 1).setScaleX(rightScale);
+                titleViews.get(position + 1).setScaleY(rightScale);
             } else {
                 titleViews.get(position).setTextColor(titleSelectColor);
+                titleViews.get(position).setScaleX(selectedScale);
+                titleViews.get(position).setScaleY(selectedScale);
             }
         }
     }
