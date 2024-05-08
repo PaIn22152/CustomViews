@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.btn_pie).setOnClickListener {
             startActivity(Intent(this@MainActivity,PieActivity::class.java))
         }
+        findViewById<View>(R.id.btn_text).setOnClickListener {
+            startActivity(Intent(this@MainActivity,TextActivity::class.java))
+        }
         
     }
 }

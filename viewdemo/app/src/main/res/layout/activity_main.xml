@@ -27,6 +27,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+      <Button
+        android:text="图文混排"
+        android:id="@+id/btn_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     </LinearLayout>
 
   </ScrollView>

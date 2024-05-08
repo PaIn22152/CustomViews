@@ -29,6 +29,9 @@
     <activity
       android:name=".DashActivity"
       android:exported="false"></activity>
+    <activity
+      android:name=".TextActivity"
+      android:exported="false"></activity>
   </application>
 
 </manifest>
