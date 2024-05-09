@@ -32,6 +32,11 @@
         android:id="@+id/btn_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+      <Button
+        android:text="圆角图片"
+        android:id="@+id/btn_rounded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

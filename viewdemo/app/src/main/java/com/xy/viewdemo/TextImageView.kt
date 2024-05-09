@@ -1,8 +1,6 @@
 package com.xy.viewdemo
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -78,21 +76,9 @@ class TextImageView(context: Context, attrs: AttributeSet) : View(context, attrs
      * 获取符合尺寸宽度的位图
      * @param width 位图的目标宽度
      */
-    fun getAvatar(width: Int): Bitmap {
-        //获取options对象
-        val options = BitmapFactory.Options()
-        //配置中设置属性获取图片的长宽设置
-        options.inJustDecodeBounds = true
-        //对图片进行解码
-        BitmapFactory.decodeResource(resources, R.drawable.test, options)
-        //取消获取图片的长宽的设置
-        options.inJustDecodeBounds = false
-        options.inDensity = options.outWidth   //实际宽度
-        options.inTargetDensity = width   //目标宽度
-        return BitmapFactory.decodeResource(resources, R.drawable.test, options)
-    }
     
-    val bitmap = getAvatar(200.dp.toInt())
+    
+    val bitmap = Utils.getAvatar(resources, 200.dp.toInt())
     
     private fun mixTextImage(canvas: Canvas) {
         

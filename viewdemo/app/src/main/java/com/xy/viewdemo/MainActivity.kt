@@ -19,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.btn_text).setOnClickListener {
             startActivity(Intent(this@MainActivity,TextActivity::class.java))
         }
+        findViewById<View>(R.id.btn_rounded).setOnClickListener {
+            startActivity(Intent(this@MainActivity,RoundedImageActivity::class.java))
+        }
         
     }
 }

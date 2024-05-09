@@ -31,7 +31,10 @@
       android:exported="false"></activity>
     <activity
       android:name=".TextActivity"
-      android:exported="false"></activity>
+      android:exported="false"/>
+    <activity
+      android:name=".RoundedImageActivity"
+      android:exported="false"/>
   </application>
 
 </manifest>
