@@ -14,6 +14,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"/>
 
+  <com.xy.viewdemo.GradientColorTextView
+    android:layout_width="match_parent"
+    android:layout_height="50dp"/>
+
   <com.xy.viewdemo.TextImageView
     android:id="@+id/tiv_view"
     android:layout_width="match_parent"

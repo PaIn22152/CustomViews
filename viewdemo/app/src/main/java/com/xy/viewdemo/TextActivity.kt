@@ -21,6 +21,8 @@ class TextActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_change).setOnClickListener {
             findViewById<TextImageView>(R.id.tiv_view).changeContent(RandomUtil.randomStr(4))
         }
+    
+    
         
     }
 }
