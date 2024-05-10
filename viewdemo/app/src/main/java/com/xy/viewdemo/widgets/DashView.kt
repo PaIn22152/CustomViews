@@ -1,4 +1,4 @@
-package com.xy.viewdemo
+package com.xy.viewdemo.widgets
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
@@ -12,6 +12,7 @@ import android.graphics.PathMeasure
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
+import com.xy.viewdemo.dp
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -45,7 +46,7 @@ class DashView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val path3 = Path()
     private val pathMeasure = PathMeasure()
     
-    private var value = 0f
+     var value = 0f
         set(value) {
             field = value
             invalidate()

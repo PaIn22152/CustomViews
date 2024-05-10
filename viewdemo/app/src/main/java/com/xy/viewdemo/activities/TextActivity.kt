@@ -1,8 +1,11 @@
-package com.xy.viewdemo
+package com.xy.viewdemo.activities
 
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.xy.viewdemo.R
+import com.xy.viewdemo.utils.RandomUtil
+import com.xy.viewdemo.widgets.TextImageView
 
 /**
  * Project    ViewDemo

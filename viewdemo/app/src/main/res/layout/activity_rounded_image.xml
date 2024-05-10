@@ -7,7 +7,7 @@
   android:layout_height="match_parent"
   android:fitsSystemWindows="true">
 
-  <com.xy.viewdemo.RoundedImageView
+  <com.xy.viewdemo.widgets.RoundedImageView
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
 

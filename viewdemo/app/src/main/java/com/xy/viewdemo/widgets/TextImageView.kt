@@ -1,4 +1,4 @@
-package com.xy.viewdemo
+package com.xy.viewdemo.widgets
 
 import android.content.Context
 import android.graphics.Canvas
@@ -10,6 +10,8 @@ import android.text.StaticLayout
 import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.View
+import com.xy.viewdemo.utils.Utils
+import com.xy.viewdemo.dp
 
 /**
  * Project    ViewDemo
@@ -44,7 +46,7 @@ class TextImageView(context: Context, attrs: AttributeSet) : View(context, attrs
         textAlign = Paint.Align.LEFT
     }
     private val textBounds = Rect()
-    private var textContent = "abcd"
+     var textContent = "abcd"
         set(value) {
             field = value
             invalidate()

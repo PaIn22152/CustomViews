@@ -14,11 +14,11 @@
     android:theme="@style/Theme.ViewDemo"
     tools:targetApi="31">
     <activity
-      android:name=".PieActivity"
+      android:name=".activities.PieActivity"
       android:exported="false"
       android:theme="@style/Theme.ViewDemo" />
     <activity
-      android:name=".MainActivity"
+      android:name=".activities.MainActivity"
       android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -27,13 +27,13 @@
       </intent-filter>
     </activity>
     <activity
-      android:name=".DashActivity"
+      android:name=".activities.DashActivity"
       android:exported="false"></activity>
     <activity
-      android:name=".TextActivity"
+      android:name=".activities.TextActivity"
       android:exported="false"/>
     <activity
-      android:name=".RoundedImageActivity"
+      android:name=".activities.RoundedImageActivity"
       android:exported="false"/>
   </application>
 

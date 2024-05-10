@@ -1,4 +1,4 @@
-package com.xy.viewdemo
+package com.xy.viewdemo.widgets
 
 import android.content.Context
 import android.graphics.Canvas
@@ -9,6 +9,8 @@ import android.graphics.PorterDuff
 import android.graphics.PorterDuffXfermode
 import android.util.AttributeSet
 import android.view.View
+import com.xy.viewdemo.utils.Utils
+import com.xy.viewdemo.dp
 
 /**
  * Project    ViewDemo
@@ -76,8 +78,10 @@ class RoundedImageView(context: Context, attrs: AttributeSet) : View(context, at
             MARGING + 300.dp,
             Path.Direction.CW
         )
+        canvas.save()
         canvas.clipPath(circulePath)
         canvas.drawBitmap(bitmap, MARGING, MARGING, paint)
+        canvas.restore()
         
     }
     

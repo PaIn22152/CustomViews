@@ -1,8 +1,10 @@
-package com.xy.viewdemo
+package com.xy.viewdemo.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.xy.viewdemo.R
+import com.xy.viewdemo.widgets.DashView
 
 class DashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

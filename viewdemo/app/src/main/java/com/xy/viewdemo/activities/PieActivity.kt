@@ -1,7 +1,8 @@
-package com.xy.viewdemo
+package com.xy.viewdemo.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.xy.viewdemo.R
 
 class PieActivity : AppCompatActivity() {
     

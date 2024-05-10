@@ -6,7 +6,7 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:background="#567890"
-  tools:context=".DashActivity">
+  tools:context=".activities.DashActivity">
 
   <LinearLayout
     android:orientation="vertical"
@@ -41,7 +41,7 @@
 
     </LinearLayout>
 
-    <com.xy.viewdemo.DashView
+    <com.xy.viewdemo.widgets.DashView
       android:id="@+id/myview"
       android:background="#ffffff"
       android:layout_margin="10dp"

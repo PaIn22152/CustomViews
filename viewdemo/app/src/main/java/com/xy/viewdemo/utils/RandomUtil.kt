@@ -1,4 +1,4 @@
-package com.xy.viewdemo
+package com.xy.viewdemo.utils
 
 import kotlin.random.Random
 

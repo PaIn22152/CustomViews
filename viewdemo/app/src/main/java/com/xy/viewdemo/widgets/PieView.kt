@@ -1,4 +1,4 @@
-package com.xy.viewdemo
+package com.xy.viewdemo.widgets
 
 import android.content.Context
 import android.graphics.Canvas
@@ -8,6 +8,7 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.xy.viewdemo.dp
 import kotlin.math.atan2
 import kotlin.math.cos
 import kotlin.math.sin
@@ -41,7 +42,7 @@ class PieView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var center_x = width / 2f
     private var center_y = height / 2f
     private var rectf: RectF? = null
-    private var floatNum = -1
+     var floatNum = -1
         set(v) {
             if (v != field) {
                 field = v
