@@ -28,13 +28,16 @@
     </activity>
     <activity
       android:name=".activities.DashActivity"
-      android:exported="false"></activity>
+      android:exported="false"/>
     <activity
       android:name=".activities.TextActivity"
       android:exported="false"/>
     <activity
       android:name=".activities.RoundedImageActivity"
       android:exported="false"/>
+      <activity
+        android:name=".activities.EditTextActivity"
+        android:exported="false"/>
   </application>
 
 </manifest>

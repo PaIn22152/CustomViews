@@ -1,6 +1,7 @@
 package com.xy.viewdemo.utils
 
-import kotlin.random.Random
+import java.util.Random
+
 
 /**
  * Project    ViewDemo
@@ -11,7 +12,7 @@ import kotlin.random.Random
  */
 class RandomUtil {
     companion object {
-        val random = Random(100)
+        val random = Random()
         val chars = ArrayList<Char>()
         
         init {
@@ -36,10 +37,46 @@ class RandomUtil {
             for (i in 0 until len) {
                 s += randomChar()
             }
-            if (randomInt(10) == 0) {
-                s += ' '
-            }
             return s
+        }
+        
+        fun randomText(len: Int): String {
+            var s = ""
+            var space = 0
+            var wordLen = 0
+            var wordSize = 0
+            for (i in 0 until len) {
+                if (i + space >= len - 1) {
+                    break
+                }
+                s += randomChar()
+                wordLen++
+                if (wordLen >= 3) {
+                    if (randomInt(8 - wordLen) == 0) {
+                        s += ' '
+                        space++
+                        wordSize++
+                        wordLen = 0
+                    } else if (wordSize >= 3) {
+                        if (randomInt(8 - wordSize) == 0) {
+                            if (randomInt(3) == 0) {
+                                s += '.'
+                                s += ' '
+                            } else {
+                                s += ','
+                                s += ' '
+                            }
+                            space++
+                            space++
+                            wordLen = 0
+                            wordSize = 0
+                        }
+                    }
+                }
+                
+            }
+            s += '.'
+            return s.lowercase()
         }
         
     }

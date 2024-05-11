@@ -22,7 +22,9 @@ class TextActivity : AppCompatActivity() {
         setContentView(R.layout.activity_text)
         
         findViewById<Button>(R.id.btn_change).setOnClickListener {
-            findViewById<TextImageView>(R.id.tiv_view).changeContent(RandomUtil.randomStr(4))
+//            findViewById<TextImageView>(R.id.tiv_view).changeContent(RandomUtil.randomStr(4))
+            println("text=${RandomUtil.randomText(200)}")
+            println("text2=${RandomUtil.randomText(500)}")
         }
     
     

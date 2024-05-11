@@ -15,7 +15,7 @@ import kotlin.reflect.KProperty
  * About      类描述：
  */
 
-//px 2 dp
+//dp 2 px
 val Float.dp
     get() = TypedValue.applyDimension(
         TypedValue.COMPLEX_UNIT_DIP,

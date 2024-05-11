@@ -69,7 +69,7 @@ class GradientColorTextView(context: Context, attrs: AttributeSet) : View(contex
         val leftWidth = (textBound.right - textBound.left) * currProgress / max
         val rightWidth = (textBound.right - textBound.left) - leftWidth
         
-        println("leftWidth=$leftWidth   rightWidth=$rightWidth")
+//        println("leftWidth=$leftWidth   rightWidth=$rightWidth")
         
         left.left = 0
         left.top = 0

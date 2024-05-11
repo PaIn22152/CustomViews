@@ -46,7 +46,7 @@ class DashView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val path3 = Path()
     private val pathMeasure = PathMeasure()
     
-     var value = 0f
+    var value = 0f
         set(value) {
             field = value
             invalidate()
@@ -59,6 +59,8 @@ class DashView(context: Context, attrs: AttributeSet) : View(context, attrs) {
         path3.lineTo(0f, 5.dp)
         path3.lineTo(0f, (-5).dp)
         path3.close()
+        
+        path.fillType = Path.FillType.INVERSE_EVEN_ODD
     }
     
     fun changeValue(f: Float) {
@@ -94,13 +96,15 @@ class DashView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         centerX = width / 2f
         centerY = height / 2f
-        arc = RectF(
+        
+        path1.reset()
+        path1.addArc(
             centerX - RADIUS,
             centerY - RADIUS,
             centerX + RADIUS,
-            centerY + RADIUS
+            centerY + RADIUS, OPEN_ANGLE / 2 + 90, 360 - OPEN_ANGLE
         )
-        path1.addArc(arc!!, OPEN_ANGLE / 2 + 90, 360 - OPEN_ANGLE)
+        
         pathMeasure.setPath(path1, false)
         pathEffect =
             PathDashPathEffect(
