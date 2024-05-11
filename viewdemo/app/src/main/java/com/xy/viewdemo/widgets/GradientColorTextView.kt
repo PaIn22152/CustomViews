@@ -6,6 +6,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Paint.FontMetrics
+import android.graphics.Path
 import android.graphics.Rect
 import android.text.TextPaint
 import android.util.AttributeSet
@@ -33,7 +34,10 @@ class GradientColorTextView(context: Context, attrs: AttributeSet) : View(contex
         isAntiAlias = true
         color = Color.parseColor("#ff3333")
         textSize = SIZE
+        style = Paint.Style.STROKE
+        strokeWidth = 1.dp
     }
+    private val leftTextPath = Path()
     private val rightPaint = TextPaint().apply {
         isAntiAlias = true
         color = Color.parseColor("#666666")
@@ -58,6 +62,8 @@ class GradientColorTextView(context: Context, attrs: AttributeSet) : View(contex
         animator.duration = 5000
         animator.startDelay = 2000
         animator.start()
+
+//        leftPaint.setShadowLayer(10f,0f,0f,Color.parseColor("#ff3333"))
     }
     
     override fun onDraw(canvas: Canvas) {
@@ -68,7 +74,7 @@ class GradientColorTextView(context: Context, attrs: AttributeSet) : View(contex
         
         val leftWidth = (textBound.right - textBound.left) * currProgress / max
         val rightWidth = (textBound.right - textBound.left) - leftWidth
-        
+
 //        println("leftWidth=$leftWidth   rightWidth=$rightWidth")
         
         left.left = 0
@@ -79,7 +85,16 @@ class GradientColorTextView(context: Context, attrs: AttributeSet) : View(contex
         leftPaint.getFontMetrics(fontMetrics)
         canvas.save()
         canvas.clipRect(left)
-        canvas.drawText(content, 0f, fontMetrics.bottom - fontMetrics.top, leftPaint)
+//        canvas.drawText(content, 0f, fontMetrics.bottom - fontMetrics.top, leftPaint)
+        leftPaint.getTextPath(
+            content,
+            0,
+            content.length,
+            0f,
+            fontMetrics.bottom - fontMetrics.top,
+            leftTextPath
+        )
+        canvas.drawPath(leftTextPath, leftPaint)
         canvas.restore()
         
         right.left = leftWidth.toInt()
