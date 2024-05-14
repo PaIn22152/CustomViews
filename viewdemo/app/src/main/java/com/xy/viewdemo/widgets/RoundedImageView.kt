@@ -17,7 +17,7 @@ import com.xy.viewdemo.dp
  * Path       com.xy.viewdemo
  * Date       2024/05/09 - 15:43
  * Author     Payne.
- * About      类描述：
+ * About      类描述：圆角图片
  */
 private val MARGING = 50.dp
 
@@ -78,10 +78,11 @@ class RoundedImageView(context: Context, attrs: AttributeSet) : View(context, at
             MARGING + 300.dp,
             Path.Direction.CW
         )
-        canvas.save()
-        canvas.clipPath(circulePath)
+        canvas.save()//保存当前状态A
+        canvas.clipPath(circulePath)//裁剪区域
         canvas.drawBitmap(bitmap, MARGING, MARGING, paint)
-        canvas.restore()
+        canvas.restore()//恢复到状态A
+        canvas.drawOval(0f,0f,100.dp,100.dp,paint)//如果没有上面的save和restore，这一行的绘制没有效果
         
     }
     

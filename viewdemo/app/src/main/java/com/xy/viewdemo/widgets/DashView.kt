@@ -21,7 +21,7 @@ import kotlin.math.sin
  * Path       com.xy.viewdemo
  * Date       2024/05/07 - 11:32
  * Author     Payne.
- * About      类描述：
+ * About      类描述：仪表盘
  */
 
 private val RADIUS = 130.dp

@@ -19,7 +19,7 @@ import com.xy.viewdemo.dp
  * Path       com.xy.viewdemo
  * Date       2024/05/09 - 11:18
  * Author     Payne.
- * About      类描述：
+ * About      类描述：音乐软件歌词进度条效果
  */
 private val max = 100f
 private val SIZE = 30.dp
@@ -83,9 +83,6 @@ class GradientColorTextView(context: Context, attrs: AttributeSet) : View(contex
         left.bottom = height
         
         leftPaint.getFontMetrics(fontMetrics)
-        canvas.save()
-        canvas.clipRect(left)
-//        canvas.drawText(content, 0f, fontMetrics.bottom - fontMetrics.top, leftPaint)
         leftPaint.getTextPath(
             content,
             0,
@@ -94,6 +91,10 @@ class GradientColorTextView(context: Context, attrs: AttributeSet) : View(contex
             fontMetrics.bottom - fontMetrics.top,
             leftTextPath
         )
+        
+        canvas.save()
+        canvas.clipRect(left)
+//        canvas.drawText(content, 0f, fontMetrics.bottom - fontMetrics.top, leftPaint)
         canvas.drawPath(leftTextPath, leftPaint)
         canvas.restore()
         

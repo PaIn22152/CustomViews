@@ -18,7 +18,7 @@ import com.xy.viewdemo.dp
  * Path       com.xy.viewdemo
  * Date       2024/05/08 - 11:19
  * Author     Payne.
- * About      类描述：
+ * About      类描述：图文混排
  */
 
 private val LONG_TEXT =
@@ -46,7 +46,7 @@ class TextImageView(context: Context, attrs: AttributeSet) : View(context, attrs
         textAlign = Paint.Align.LEFT
     }
     private val textBounds = Rect()
-     var textContent = "abcd"
+    var textContent = "abcd"
         set(value) {
             field = value
             invalidate()
@@ -178,15 +178,16 @@ class TextImageView(context: Context, attrs: AttributeSet) : View(context, attrs
 //        textBounds.bottom += (150.dp.toInt() + h / 2)
 //        canvas.drawRect(textBounds, paint)
 //
-//        canvas.drawText(
-//            textContent,
-//            150.dp,
-//            150.dp + h / 2,
-////            150.dp - (textBounds.bottom + textBounds.top) / 2f,
-//            textPaint
-//        )
+        textPaint.textAlign=Paint.Align.CENTER
+        canvas.drawText(
+            textContent,
+            150.dp,
+            150.dp - (textBounds.bottom + textBounds.top) / 2f,
+            textPaint
+        )
         
         
+        textPaint.textAlign=Paint.Align.CENTER
         textPaint.getFontMetrics(fontMetrics)
         println("fontMetrics.descent=${fontMetrics.descent}  fontMetrics.ascent=${fontMetrics.ascent}")
 //        println("150.dp=${150.dp}   diff=${(fontMetrics.descent - fontMetrics.ascent) / 2f}    h / 2=${h / 2}")
@@ -194,8 +195,7 @@ class TextImageView(context: Context, attrs: AttributeSet) : View(context, attrs
         canvas.drawText(
             textContent,
             150.dp,
-            150.dp + (fontMetrics.descent - fontMetrics.ascent) / 2f,
-//            150.dp - (fontMetrics.descent + fontMetrics.ascent) / 2f,
+            150.dp - (fontMetrics.descent + fontMetrics.ascent) / 2f,
             textPaint
         )
         

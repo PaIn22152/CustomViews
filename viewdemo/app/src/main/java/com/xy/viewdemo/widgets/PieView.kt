@@ -23,7 +23,7 @@ import kotlin.math.sqrt
  * Path       com.xy.viewdemo
  * Date       2024/05/07 - 16:33
  * Author     Payne.
- * About      类描述：
+ * About      类描述：饼状图
  */
 
 private val RADIUS = 150.dp

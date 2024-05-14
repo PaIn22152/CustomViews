@@ -47,6 +47,13 @@ class MaterialEditText(context: Context, attrs: AttributeSet) : AppCompatEditTex
         floatTextPaint.textSize = textSize
         floatTextPaint.getFontMetrics(fontMetrics)
         
+        setPadding(
+            paddingLeft,
+            (paddingTop - (fontMetrics.bottom + fontMetrics.top) / 2 + 10.dp).toInt(),
+            paddingRight,
+            paddingBottom
+        )
+        
         
         for (i in 0 until attrs.attributeCount) {
             println("attrs name${attrs.getAttributeName(i)}  value=${attrs.getAttributeValue(i)}")
@@ -84,7 +91,7 @@ class MaterialEditText(context: Context, attrs: AttributeSet) : AppCompatEditTex
     }
     
     private fun drawFloat(canvas: Canvas) {
-        setPadding(0, (fontMetrics.bottom - fontMetrics.top + 10.dp).toInt(), 0, 0)
+        
         floatTextPaint.alpha = (progress * 0xff).toInt()
         canvas.drawText(
             hint.toString(),

@@ -35,9 +35,12 @@
     <activity
       android:name=".activities.RoundedImageActivity"
       android:exported="false"/>
-      <activity
-        android:name=".activities.EditTextActivity"
-        android:exported="false"/>
+    <activity
+      android:name=".activities.EditTextActivity"
+      android:exported="false"/>
+    <activity
+      android:name=".activities.CameraActivity"
+      android:exported="false"/>
   </application>
 
 </manifest>

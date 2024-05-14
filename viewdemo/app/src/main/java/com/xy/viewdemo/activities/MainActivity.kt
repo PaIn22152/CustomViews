@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.xy.viewdemo.R
-import com.xy.viewdemo.utils.RandomUtil
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         }
         findViewById<View>(R.id.btn_edit_text).setOnClickListener {
             startActivity(Intent(this@MainActivity, EditTextActivity::class.java))
+        }
+        findViewById<View>(R.id.btn_camera).setOnClickListener {
+            startActivity(Intent(this@MainActivity, CameraActivity::class.java))
         }
         
     }
