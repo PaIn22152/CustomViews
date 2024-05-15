@@ -1,9 +1,17 @@
 package com.xy.viewdemo
 
 import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.util.TypedValue
 import android.view.View
-import java.util.Objects
+import androidx.annotation.Px
+import androidx.core.graphics.component1
+import androidx.core.graphics.component2
+import androidx.core.graphics.component3
+import androidx.core.graphics.component4
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
@@ -37,5 +45,5 @@ class InvalidateAttr(val key: String, val def: Any, val view: View) : ReadWriteP
         map[key] = value
         view.invalidate()
     }
-    
 }
+

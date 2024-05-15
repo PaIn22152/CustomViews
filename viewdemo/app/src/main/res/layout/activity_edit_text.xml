@@ -24,6 +24,7 @@
     <com.xy.viewdemo.widgets.MaterialEditText
       android:hint="请输入密码1"
       app:showFloatText="false"
+      app:testName="hhhhh"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"/>
   </RelativeLayout>

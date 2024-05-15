@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.btn_camera).setOnClickListener {
             startActivity(Intent(this@MainActivity, CameraActivity::class.java))
         }
+        findViewById<View>(R.id.btn_mesh).setOnClickListener {
+            startActivity(Intent(this@MainActivity, MeshActivity::class.java))
+        }
+        
         
     }
 }

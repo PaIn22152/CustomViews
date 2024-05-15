@@ -2,9 +2,6 @@
 <resources>
   <declare-styleable name="MaterialEditText">
     <attr name="showFloatText" format="boolean"/>
+    <attr name="testName" format="string"/>
   </declare-styleable>
-
-
-
-
 </resources>
