@@ -44,6 +44,9 @@
     <activity
       android:name=".activities.MeshActivity"
       android:exported="false"/>
+    <activity
+      android:name=".activities.TagLayoutActivity"
+      android:exported="false"/>
   </application>
 
 </manifest>

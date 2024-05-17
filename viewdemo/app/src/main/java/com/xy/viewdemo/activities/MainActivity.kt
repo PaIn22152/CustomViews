@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.btn_mesh).setOnClickListener {
             startActivity(Intent(this@MainActivity, MeshActivity::class.java))
         }
+        findViewById<View>(R.id.btn_tag).setOnClickListener {
+            startActivity(Intent(this@MainActivity, TagLayoutActivity::class.java))
+        }
         
         
     }
