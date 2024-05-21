@@ -35,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.btn_tag).setOnClickListener {
             startActivity(Intent(this@MainActivity, TagLayoutActivity::class.java))
         }
+        findViewById<View>(R.id.btn_aidl).setOnClickListener {
+            startActivity(Intent(this@MainActivity, AidlActivity::class.java))
+        }
         
         
     }

@@ -47,3 +47,7 @@ class InvalidateAttr(val key: String, val def: Any, val view: View) : ReadWriteP
     }
 }
 
+fun String.log() {
+    println("taglog:$this")
+}
+

@@ -47,6 +47,27 @@
     <activity
       android:name=".activities.TagLayoutActivity"
       android:exported="false"/>
+    <activity
+      android:name=".activities.AidlActivity"
+      android:exported="false"/>
+    <activity
+      android:name=".activities.Aidl_1_Activity"
+      android:process=":client1"
+      android:exported="false"/>
+    <activity
+      android:name=".activities.Aidl_2_Activity"
+      android:process=":client2"
+      android:exported="false"/>
+
+    <service android:name=".services.AIDLClient1" android:process=":client1"/>
+    <service android:name=".services.AIDLClient2" android:process=":client2"/>
+    <service android:name=".services.AIDLServer"
+      android:enabled="true"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="com.xy.viewdemo.aidl.action" />
+      </intent-filter>
+    </service>
   </application>
 
 </manifest>
