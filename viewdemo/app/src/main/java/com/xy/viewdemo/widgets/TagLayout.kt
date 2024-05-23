@@ -16,11 +16,13 @@ import androidx.core.view.children
 class TagLayout(context: Context, attrs: AttributeSet) : ViewGroup(context, attrs) {
     
     private val bounds = mutableListOf<Rect>()
+    
+    private var type = 1//0自己实现measure  1measureChildWithMargins
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val parentWidth = MeasureSpec.getSize(widthMeasureSpec)
         val parentHeight = MeasureSpec.getSize(heightMeasureSpec)
-        paddingLeft
         var lineMaxHeight = 0
+        var maxWidth = 0
         var usedWidth = paddingLeft
         var usedHeight = paddingTop
         for ((index, child) in children.withIndex()) {
@@ -29,100 +31,114 @@ class TagLayout(context: Context, attrs: AttributeSet) : ViewGroup(context, attr
             }
             val lp = child.layoutParams
             
-            val widthSpec = myMeasure(widthMeasureSpec, lp.width)
-            val heightSpec = myMeasure(heightMeasureSpec, lp.height)
-            println("888  MeasureSpec.getSize(widthSpec)=${MeasureSpec.getSize(widthSpec)}")
+            var widthSpec = 0
+            var heightSpec = 0
+            var childWidth = 0
+            var childHeight = 0
+            if (0 == type) {
+                widthSpec = myMeasure(widthMeasureSpec, lp.width, usedWidth)
+                heightSpec = myMeasure(heightMeasureSpec, lp.height, usedHeight)
+                childWidth = MeasureSpec.getSize(widthSpec)
+                childHeight = MeasureSpec.getSize(heightSpec)
+            } else if (1 == type) {
+                measureChildWithMargins(
+                    child,
+                    widthMeasureSpec,
+                    paddingLeft,
+                    heightMeasureSpec,
+                    usedHeight
+                )
+                childWidth = child.measuredWidth
+                childHeight = child.measuredHeight
+            }
+            
+            
+            
+            
+            println("888  chileWidth=${childWidth}")
             println("888  parentWidth=${parentWidth}")
             println("888  usedWidth=${usedWidth}")
-            if (MeasureSpec.getSize(widthSpec) > parentWidth - usedWidth - paddingLeft - paddingRight) {
+            if (childWidth > parentWidth - usedWidth - paddingLeft - paddingRight) {
                 usedWidth = paddingLeft
                 usedHeight += lineMaxHeight
                 lineMaxHeight = 0
+                
+                if (1 == type) {
+                    measureChildWithMargins(
+                        child,
+                        widthMeasureSpec,
+                        paddingLeft,
+                        heightMeasureSpec,
+                        usedHeight
+                    )
+                }
             }
             
             bounds[index].set(
                 usedWidth,
                 usedHeight,
-                usedWidth + MeasureSpec.getSize(widthSpec),
-                usedHeight + MeasureSpec.getSize(heightSpec)
+                usedWidth + childWidth,
+                usedHeight + childHeight
             )
-            usedWidth += MeasureSpec.getSize(widthSpec)
-            lineMaxHeight = lineMaxHeight.coerceAtLeast(MeasureSpec.getSize(heightSpec))
-            child.measure(widthSpec, heightSpec)
+            usedWidth += childWidth
+            lineMaxHeight = lineMaxHeight.coerceAtLeast(childHeight)
+            maxWidth = maxWidth.coerceAtLeast(usedWidth)
+            if (0 == type) {
+                child.measure(widthSpec, heightSpec)
+            }
         }
         
-        val realW = parentWidth
+        val realW = maxWidth
         val realH = usedHeight + lineMaxHeight + paddingBottom
         setMeasuredDimension(realW, realH)
         
     }
     
-    fun myMeasure(parentMeasureSpec: Int, childSize: Int): Int {
+    fun myMeasure(parentMeasureSpec: Int, childSize: Int, used: Int): Int {
         val parentMode = MeasureSpec.getMode(parentMeasureSpec)
         val parentSize = MeasureSpec.getSize(parentMeasureSpec)
         var size = 0
         var mode = 0
         
-        when (parentMode) {
-            MeasureSpec.EXACTLY -> {//精确值，设置多少就是多少
-//                println("myMeasure  parentMode=EXACTLY")
-                when (childSize) {
-                    LayoutParams.MATCH_PARENT -> {
-                        size = parentSize
+        when (childSize) {
+            LayoutParams.MATCH_PARENT -> {
+                when (parentMode) {
+                    MeasureSpec.EXACTLY -> {
+                        size = parentSize - used
                         mode = MeasureSpec.EXACTLY
                     }
                     
-                    LayoutParams.WRAP_CONTENT -> {
-                        size = parentSize
+                    MeasureSpec.AT_MOST -> {
+                        size = parentSize - used
                         mode = MeasureSpec.AT_MOST
                     }
                     
-                    else -> {
-                        size = childSize
-                        mode = MeasureSpec.EXACTLY
+                    MeasureSpec.UNSPECIFIED -> {
+                        size = 0
+                        mode = MeasureSpec.UNSPECIFIED
                     }
                 }
             }
             
-            MeasureSpec.AT_MOST -> {//至多，实际大小不超过建议值
-//                println("myMeasure  parentMode=AT_MOST")
-                when (childSize) {
-                    LayoutParams.MATCH_PARENT -> {
-                        size = parentSize
+            LayoutParams.WRAP_CONTENT -> {
+                when (parentMode) {
+                    MeasureSpec.EXACTLY, MeasureSpec.AT_MOST -> {
+                        size = parentSize - used
                         mode = MeasureSpec.AT_MOST
                     }
                     
-                    LayoutParams.WRAP_CONTENT -> {
-                        size = parentSize
-                        mode = MeasureSpec.AT_MOST
-                    }
-                    
-                    else -> {
-                        size = childSize
-                        mode = MeasureSpec.EXACTLY
+                    MeasureSpec.UNSPECIFIED -> {
+                        size = 0
+                        mode = MeasureSpec.UNSPECIFIED
                     }
                 }
             }
             
-            MeasureSpec.UNSPECIFIED -> {//任意大小，无限大
-//                println("myMeasure  parentMode=UNSPECIFIED")
-                when (childSize) {
-                    LayoutParams.MATCH_PARENT -> {
-                        size = 0
-                        mode = MeasureSpec.UNSPECIFIED
-                    }
-                    
-                    LayoutParams.WRAP_CONTENT -> {
-                        size = 0
-                        mode = MeasureSpec.UNSPECIFIED
-                    }
-                    
-                    else -> {
-                        size = childSize
-                        mode = MeasureSpec.EXACTLY
-                    }
-                }
+            else -> {
+                size = childSize
+                mode = MeasureSpec.EXACTLY
             }
+            
         }
         return MeasureSpec.makeMeasureSpec(size, mode)
     }
@@ -132,5 +148,9 @@ class TagLayout(context: Context, attrs: AttributeSet) : ViewGroup(context, attr
             val bound = bounds[index]
             child.layout(bound.left, bound.top, bound.right, bound.bottom)
         }
+    }
+    
+    override fun generateLayoutParams(attrs: AttributeSet?): LayoutParams {
+        return MarginLayoutParams(context, attrs)
     }
 }

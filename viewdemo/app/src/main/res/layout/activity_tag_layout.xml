@@ -7,86 +7,92 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:background="#555522"
-  android:fitsSystemWindows="true"
   tools:context=".activities.PieActivity">
 
 
-  <TextView
-    android:background="#881111"
-    android:gravity="center"
-    android:text="测试1"
-    android:layout_width="50dp"
-    android:layout_height="50dp"/>
+<!--  <TextView-->
+<!--    android:background="#881111"-->
+<!--    android:gravity="center"-->
+<!--    android:text="测试1"-->
+<!--    android:layout_width="50dp"-->
+<!--    android:layout_height="50dp"/>-->
 
-  <TextView
-    android:background="#5cd6d6"
-    android:gravity="center"
-    android:text="测试2"
-    android:layout_width="60dp"
-    android:layout_height="60dp"/>
+<!--  <TextView-->
+<!--    android:background="#5cd6d6"-->
+<!--    android:gravity="center"-->
+<!--    android:text="测试2"-->
+<!--    android:layout_width="60dp"-->
+<!--    android:layout_height="60dp"/>-->
 
-  <TextView
-    android:background="#ff4d4d"
-    android:gravity="center"
-    android:text="测试3"
-    android:layout_width="120dp"
-    android:layout_height="40dp"/>
+<!--  <TextView-->
+<!--    android:background="#ff4d4d"-->
+<!--    android:gravity="center"-->
+<!--    android:text="测试3"-->
+<!--    android:layout_width="120dp"-->
+<!--    android:layout_height="40dp"/>-->
 
-  <TextView
-    android:background="#ecc6d9"
-    android:gravity="center"
-    android:text="测试4"
-    android:layout_width="60dp"
-    android:layout_height="80dp"/>
+<!--  <TextView-->
+<!--    android:background="#ecc6d9"-->
+<!--    android:gravity="center"-->
+<!--    android:text="测试4"-->
+<!--    android:layout_width="60dp"-->
+<!--    android:layout_height="80dp"/>-->
 
-  <TextView
-    android:background="#881111"
-    android:gravity="center"
-    android:text="测试5"
-    android:layout_width="150dp"
-    android:layout_height="150dp"/>
-  <TextView
-    android:background="#5cd6d6"
-    android:gravity="center"
-    android:text="测试2"
-    android:layout_width="80dp"
-    android:layout_height="60dp"/>
+<!--  <TextView-->
+<!--    android:background="#881111"-->
+<!--    android:gravity="center"-->
+<!--    android:text="测试5"-->
+<!--    android:layout_width="150dp"-->
+<!--    android:layout_height="150dp"/>-->
+<!--  <TextView-->
+<!--    android:background="#5cd6d6"-->
+<!--    android:gravity="center"-->
+<!--    android:text="测试2"-->
+<!--    android:layout_width="80dp"-->
+<!--    android:layout_height="60dp"/>-->
 
-  <TextView
-    android:background="#ff4d4d"
-    android:gravity="center"
-    android:text="测试3"
-    android:layout_width="120dp"
-    android:layout_height="40dp"/>
+<!--  <TextView-->
+<!--    android:background="#ff4d4d"-->
+<!--    android:gravity="center"-->
+<!--    android:text="测试3"-->
+<!--    android:layout_width="120dp"-->
+<!--    android:layout_height="40dp"/>-->
 
-  <TextView
-    android:background="#ecc6d9"
-    android:gravity="center"
-    android:text="测试4"
-    android:layout_width="60dp"
-    android:layout_height="80dp"/>
-  <TextView
-    android:background="#5cd6d6"
-    android:gravity="center"
-    android:text="测试2"
-    android:layout_width="360dp"
-    android:layout_height="60dp"/>
+<!--  <TextView-->
+<!--    android:background="#ecc6d9"-->
+<!--    android:gravity="center"-->
+<!--    android:text="测试4"-->
+<!--    android:layout_width="60dp"-->
+<!--    android:layout_height="80dp"/>-->
+<!--  <TextView-->
+<!--    android:background="#5cd6d6"-->
+<!--    android:gravity="center"-->
+<!--    android:text="测试2"-->
+<!--    android:layout_width="360dp"-->
+<!--    android:layout_height="60dp"/>-->
 
-  <TextView
-    android:background="#ff4d4d"
-    android:gravity="center"
-    android:text="测试3"
-    android:layout_width="120dp"
-    android:layout_height="40dp"/>
+<!--  <TextView-->
+<!--    android:background="#ff4d4d"-->
+<!--    android:gravity="center"-->
+<!--    android:text="测试3"-->
+<!--    android:layout_width="120dp"-->
+<!--    android:layout_height="40dp"/>-->
 
-  <TextView
-    android:background="#ecc6d9"
-    android:gravity="center"
-    android:text="测试4"
-    android:layout_width="260dp"
-    android:layout_height="80dp"/>
+<!--  <TextView-->
+<!--    android:background="#ecc6d9"-->
+<!--    android:gravity="center"-->
+<!--    android:text="测试4"-->
+<!--    android:layout_width="260dp"-->
+<!--    android:layout_height="80dp"/>-->
 
-  <!--<com.xy.viewdemo.widgets.RandomView
+
+
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"/>
 
@@ -100,7 +106,70 @@
 
   <com.xy.viewdemo.widgets.RandomView
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>-->
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <com.xy.viewdemo.widgets.RandomView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
 
 
 

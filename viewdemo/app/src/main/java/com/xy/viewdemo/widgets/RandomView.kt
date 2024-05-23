@@ -10,6 +10,7 @@ import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import android.view.View
 import android.widget.RelativeLayout
+import androidx.appcompat.widget.AppCompatTextView
 import com.xy.viewdemo.dp
 import java.util.Random
 
@@ -32,71 +33,40 @@ private val COLORS = arrayOf(
 )
 
 private val NAMES = arrayOf(
-    "通信双方",
-    "连接在运",
-    "导致这个TC",
-    "条TCP连接网",
-    "不具有真正的",
-    "的消息",
-    "此当",
-    "不通信之后，网关会出于网"
+    "北京市",
+    "深圳市",
+    "上海市",
+    "哈尔滨市",
+    "呼和浩特市",
+    "早市",
+    "黑市",
 )
 
-class RandomView(context: Context, attrs: AttributeSet) : View(context, attrs) {
-    private val TEXT_SIZE = 15.dp
+private val SIZES = arrayOf(12, 20, 25)
+private val X_PADDING = 16.dp.toInt()
+private val Y_PADDING = 8.dp.toInt()
+
+class RandomView(context: Context, attrs: AttributeSet) : AppCompatTextView(context, attrs) {
     private val paint = Paint().apply {
         isAntiAlias = true
-        textSize = TEXT_SIZE
-        textAlign = Paint.Align.CENTER
     }
-    private val MIN_WIDTH = 5.dp
-    private val FLOATING_WIDTH = 20.dp
-    private val MIN_HEIGHT = 10.dp
-    private val FLOATING_HEIGHT = 50.dp
-    private val textBounds = Rect()
-    private val name by lazy { NAMES[Random().nextInt(NAMES.size)] }
-    private val colorDrawable by lazy {
-        ColorDrawable(COLORS[Random().nextInt(COLORS.size)])
-    }
-    private val random = Random()
-    private var randomW = 0f
-    private var randomH = 0f
+    private val random=Random()
+    private val name by lazy { NAMES[random.nextInt(NAMES.size)] }
+    private val textSize by lazy { SIZES[random.nextInt(SIZES.size)] }
+    private val color by lazy { COLORS[random.nextInt(COLORS.size)] }
     
     init {
-        paint.getTextBounds(name, 0, name.length, textBounds)
-        randomW = textBounds.right - textBounds.left +
-                random.nextInt(FLOATING_WIDTH.toInt()) + MIN_WIDTH
-        randomH = textBounds.bottom - textBounds.top +
-                random.nextInt(FLOATING_HEIGHT.toInt()) + MIN_HEIGHT
+        text = name
+        setTextSize(textSize.toFloat())
+        setTextColor(Color.WHITE)
+        paint.color = color
+        setPadding(X_PADDING, Y_PADDING, X_PADDING, Y_PADDING)
     }
     
-    
-    
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        
-        println("onMeasure  randomW=$randomW  randomH=$randomH")
-        setMeasuredDimension(randomW.toInt(), randomH.toInt())
-    }
     
     override fun onDraw(canvas: Canvas) {
-        println("onDraw  width=$width  height=$height")
-        println("onDraw  randomW=$randomW  randomH=$randomH")
-        colorDrawable.setBounds(0, 0, width, height)
-        colorDrawable.draw(canvas)
-        canvas.drawText(
-            name,
-            width / 2f,
-            (height / 2 + (textBounds.bottom - textBounds.top) / 2).toFloat(),
-            paint
-        )
         
-//        colorDrawable.setBounds(0, 0, randomW.toInt(), randomH.toInt())
-//        colorDrawable.draw(canvas)
-//        canvas.drawText(
-//            name,
-//            randomW / 2f,
-//            (randomH / 2 + (textBounds.bottom - textBounds.top) / 2).toFloat(),
-//            paint
-//        )
+        canvas.drawRoundRect(0f, 0f, width.toFloat(), height.toFloat(), 4.dp, 4.dp, paint)
+        super.onDraw(canvas)
     }
 }
