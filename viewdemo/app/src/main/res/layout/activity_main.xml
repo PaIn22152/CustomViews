@@ -67,6 +67,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+      <Button
+        android:text="可缩放的ImageView"
+        android:id="@+id/btn_scale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     </LinearLayout>
 
   </ScrollView>

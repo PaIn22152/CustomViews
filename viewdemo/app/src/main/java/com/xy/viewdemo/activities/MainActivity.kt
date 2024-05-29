@@ -38,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.btn_aidl).setOnClickListener {
             startActivity(Intent(this@MainActivity, AidlActivity::class.java))
         }
+        findViewById<View>(R.id.btn_scale).setOnClickListener {
+            startActivity(Intent(this@MainActivity, ScaleActivity::class.java))
+        }
         
         
     }
