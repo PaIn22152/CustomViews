@@ -21,7 +21,7 @@ import kotlin.math.sin
  * Path       com.xy.viewdemo
  * Date       2024/05/07 - 11:32
  * Author     Payne.
- * About      类描述：仪表盘
+ * About      类描述：
  */
 
 private val RADIUS = 130.dp
@@ -59,8 +59,6 @@ class DashView(context: Context, attrs: AttributeSet) : View(context, attrs) {
         path3.lineTo(0f, 5.dp)
         path3.lineTo(0f, (-5).dp)
         path3.close()
-        
-        path.fillType = Path.FillType.INVERSE_EVEN_ODD
     }
     
     fun changeValue(f: Float) {
@@ -96,15 +94,13 @@ class DashView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         centerX = width / 2f
         centerY = height / 2f
-        
-        path1.reset()
-        path1.addArc(
+        arc = RectF(
             centerX - RADIUS,
             centerY - RADIUS,
             centerX + RADIUS,
-            centerY + RADIUS, OPEN_ANGLE / 2 + 90, 360 - OPEN_ANGLE
+            centerY + RADIUS
         )
-        
+        path1.addArc(arc!!, OPEN_ANGLE / 2 + 90, 360 - OPEN_ANGLE)
         pathMeasure.setPath(path1, false)
         pathEffect =
             PathDashPathEffect(

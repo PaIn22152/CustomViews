@@ -73,6 +73,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+      <Button
+        android:text="多点触控View"
+        android:id="@+id/btn_multiple_pointer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     </LinearLayout>
 
   </ScrollView>

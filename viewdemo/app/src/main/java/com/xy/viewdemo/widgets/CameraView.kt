@@ -7,6 +7,7 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
+import androidx.core.graphics.withSave
 import com.xy.viewdemo.R
 import com.xy.viewdemo.dp
 import com.xy.viewdemo.utils.Utils
@@ -54,10 +55,10 @@ class CameraView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     override fun onDraw(canvas: Canvas) {
 
 
-        canvas.translate(width / 2f, height / 2f)
-        camera.applyToCanvas(canvas)
-        canvas.translate(-width / 2f, -height / 2f)
-        canvas.drawBitmap(pageBitmap, bitmapLeft, bitmapTop, paint)
+//        canvas.translate(width / 2f, height / 2f)
+//        camera.applyToCanvas(canvas)
+//        canvas.translate(-width / 2f, -height / 2f)
+//        canvas.drawBitmap(pageBitmap, bitmapLeft, bitmapTop, paint)
 
 //        canvas.save()
 //        canvas.clipRect(0f,0f,width.toFloat(),height/2f)
@@ -73,32 +74,32 @@ class CameraView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 //        canvas.restore()
         
         //正着思考
-//        val rotate = progress * 360
-//        val angle = progress * 50
-//        canvas.withSave {
-//            canvas.translate(width / 2f, height / 2f)
-//            canvas.rotate(-rotate)
-//            canvas.translate(-width / 2f, -height / 2f)
-//            canvas.clipRect(0f, 0f, width.toFloat(), height / 2f)
-//            canvas.translate(width / 2f, height / 2f)
-//            canvas.rotate(rotate)
-//            canvas.translate(-width / 2f, -height / 2f)
-//            canvas.drawBitmap(pageBitmap, bitmapLeft, bitmapTop, paint)
-//        }
-//
-//        canvas.withSave {
-//            canvas.translate(width / 2f, height / 2f)
-//            canvas.rotate(-rotate)
-//            camera.rotateX(angle)
-//            camera.applyToCanvas(canvas)
-//            camera.rotateX(-angle)
-//            canvas.translate(-width / 2f, -height / 2f)
-//            canvas.clipRect(0f, height / 2f, width.toFloat(), height.toFloat())
-//            canvas.translate(width / 2f, height / 2f)
-//            canvas.rotate(rotate)
-//            canvas.translate(-width / 2f, -height / 2f)
-//            canvas.drawBitmap(pageBitmap, bitmapLeft, bitmapTop, paint)
-//        }
+        val rotate = progress * 360
+        val angle = progress * 20
+        canvas.withSave {
+            canvas.translate(width / 2f, height / 2f)
+            canvas.rotate(-rotate)
+            canvas.translate(-width / 2f, -height / 2f)
+            canvas.clipRect(0f, 0f, width.toFloat(), height / 2f)
+            canvas.translate(width / 2f, height / 2f)
+            canvas.rotate(rotate)
+            canvas.translate(-width / 2f, -height / 2f)
+            canvas.drawBitmap(pageBitmap, bitmapLeft, bitmapTop, paint)
+        }
+
+        canvas.withSave {
+            canvas.translate(width / 2f, height / 2f)
+            canvas.rotate(-rotate)
+            camera.rotateX(angle)
+            camera.applyToCanvas(canvas)
+            camera.rotateX(-angle)
+            canvas.translate(-width / 2f, -height / 2f)
+            canvas.clipRect(0f, height / 2f, width.toFloat(), height.toFloat())
+            canvas.translate(width / 2f, height / 2f)
+            canvas.rotate(rotate)
+            canvas.translate(-width / 2f, -height / 2f)
+            canvas.drawBitmap(pageBitmap, bitmapLeft, bitmapTop, paint)
+        }
         
         //反着思考
 //        val rotate = progress * 360

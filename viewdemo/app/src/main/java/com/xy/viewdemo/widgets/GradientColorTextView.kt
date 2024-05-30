@@ -51,7 +51,7 @@ class GradientColorTextView(context: Context, attrs: AttributeSet) : View(contex
     //是否使用自定义委托属性有待验证
     private var text: Any by InvalidateAttr("text", "这里是歌词abcde哦哦哦", this)
     
-    private var progress = 0f
+     var progress = 0f
         set(value) {
             field = value
             invalidate()
@@ -60,7 +60,7 @@ class GradientColorTextView(context: Context, attrs: AttributeSet) : View(contex
     init {
         val animator = ObjectAnimator.ofFloat(this, "progress", 0f, 93f)
         animator.duration = 5000
-        animator.startDelay = 2000
+        animator.startDelay = 500
         animator.start()
 
 //        leftPaint.setShadowLayer(10f,0f,0f,Color.parseColor("#ff3333"))

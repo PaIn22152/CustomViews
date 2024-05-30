@@ -51,6 +51,9 @@
       android:name=".activities.ScaleActivity"
       android:exported="false"/>
     <activity
+      android:name=".activities.MultiplePointerActivity"
+      android:exported="false"/>
+    <activity
       android:name=".activities.AidlActivity"
       android:exported="false"/>
     <activity

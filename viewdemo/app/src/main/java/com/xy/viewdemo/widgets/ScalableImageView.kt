@@ -85,9 +85,19 @@ class ScalableImageView(context: Context?, attrs: AttributeSet?) : View(context,
     override fun onDoubleTap(e: MotionEvent): Boolean {//双击
         big = !big
         if (big) {
-            animator.start()
+            ObjectAnimator.ofFloat(
+                this,
+                "currentScale",
+                currentScale,
+                bigScale
+            ).start()
         } else {
-            animator.reverse()
+            ObjectAnimator.ofFloat(
+                this,
+                "currentScale",
+                currentScale,
+                smallScale
+            ).start()
         }
         return true
     }
@@ -152,6 +162,7 @@ class ScalableImageView(context: Context?, attrs: AttributeSet?) : View(context,
     override fun onScaleBegin(detector: ScaleGestureDetector): Boolean {
         offsetX = (detector.focusX - width / 2f) * (1 - bigScale / smallScale)
         offsetY = (detector.focusY - height / 2f) * (1 - bigScale / smallScale)
+        fixOffset()
         return true
     }
     
