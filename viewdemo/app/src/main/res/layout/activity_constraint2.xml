@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/constraint_root"
+  android:layout_width="300dp"
+  android:layout_height="300dp"
+  android:layout_centerInParent="true"
+  android:background="#ffffff">
+
+  <!--constraintSet test code  start-->
+  <View
+    android:id="@+id/v1"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:background="@color/teal_200"
+    android:layout_width="100dp"
+    android:layout_height="100dp"/>
+  <!--constraintSet test code  start-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

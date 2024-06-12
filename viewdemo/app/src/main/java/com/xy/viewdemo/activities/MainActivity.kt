@@ -1,9 +1,13 @@
 package com.xy.viewdemo.activities
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.xy.viewdemo.R
 
 class MainActivity : AppCompatActivity() {
@@ -44,7 +48,30 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.btn_multiple_pointer).setOnClickListener {
             startActivity(Intent(this@MainActivity, MultiplePointerActivity::class.java))
         }
+        findViewById<View>(R.id.btn_thread).setOnClickListener {
+            startActivity(Intent(this@MainActivity, ThreadJavaActivity::class.java))
+        }
+        findViewById<View>(R.id.btn_constraint).setOnClickListener {
+            startActivity(Intent(this@MainActivity, ConstraintActivity::class.java))
+        }
+//        startActivity(Intent(this@MainActivity, ConstraintActivity::class.java))
+        
+        requestPermissions()
         
         
+    }
+    
+    private fun requestPermissions() {
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                1
+            )
+        }
     }
 }

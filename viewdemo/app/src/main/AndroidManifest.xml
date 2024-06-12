@@ -3,6 +3,10 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="com.xy.viewdemo">
 
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+
   <application
     android:allowBackup="true"
     android:dataExtractionRules="@xml/data_extraction_rules"
@@ -55,6 +59,15 @@
       android:exported="false"/>
     <activity
       android:name=".activities.AidlActivity"
+      android:exported="false"/>
+    <activity
+      android:name=".activities.ThreadActivity"
+      android:exported="false"/>
+    <activity
+      android:name=".activities.ThreadJavaActivity"
+      android:exported="false"/>
+    <activity
+      android:name=".activities.ConstraintActivity"
       android:exported="false"/>
     <activity
       android:name=".activities.Aidl_1_Activity"
