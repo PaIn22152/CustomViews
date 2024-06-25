@@ -70,6 +70,9 @@
       android:name=".activities.ConstraintActivity"
       android:exported="false"/>
     <activity
+      android:name=".activities.MotionActivity"
+      android:exported="false"/>
+    <activity
       android:name=".activities.Aidl_1_Activity"
       android:process=":client1"
       android:exported="false"/>

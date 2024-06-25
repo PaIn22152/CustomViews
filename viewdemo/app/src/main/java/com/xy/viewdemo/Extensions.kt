@@ -51,3 +51,7 @@ fun String.log() {
     println("taglog:$this")
 }
 
+fun String.logThread() {
+    println("taglog: thread=${Thread.currentThread()} $this")
+}
+

@@ -7,8 +7,17 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.util.Log;
 import androidx.annotation.Nullable;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * Project    ViewDemo
@@ -64,39 +73,119 @@ public class ThreadJavaActivity extends Activity {
 //            }
 //        }, 5000);
 
+//        ExecutorService executorService = Executors.newCachedThreadPool();
+//        executorService.execute(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.currentThread().setName("t66666");
+//                    d("executorService start");
+////                    while (!Thread.currentThread().isInterrupted()) {
+////
+////                    }
+//
+//                    Thread.sleep(300000);
+//                    d("executorService end");
+//                } catch (Exception e) {
+//                    d("executorService e=" + e);
+//                } finally {
+//                    d("executorService finally");
+//                }
+//
+//            }
+//        });
+//        mainHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                executorService.shutdown();
+//                d("executorService.shutdown()");
+//
+//                executorService.shutdownNow();
+//                d("executorService.shutdownNow()");
+//            }
+//        }, 2000);
 
-        ExecutorService executorService = Executors.newCachedThreadPool();
+        thread1 = new Thread1();
+        thread1.start();
+        thread2 = new Thread2();
+        thread2.start();
+        new Thread3().start();
+
+    }
+
+    private static          Thread1 thread1;
+    private static          Thread2 thread2;
+    private static volatile boolean end = false;
+
+    private static synchronized void test1() {
+        d("test1 start");
+        while (!end) {
+
+        }
+        d("test1 end");
+    }
+
+    private static synchronized void test2() {
+        d("test2 start");
+    }
+
+    private static class Thread1 extends Thread {
+
+        @Override
+        public void run() {
+            super.run();
+            d("Thread1 start");
+            test1();
+            d("Thread1 end");
+        }
+    }
+
+    private static class Thread2 extends Thread {
+
+        @Override
+        public void run() {
+            super.run();
+            d("Thread2 start");
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+
+            }
+            test2();
+            d("Thread2 end");
+        }
+    }
+
+    private static class Thread3 extends Thread {
+
+        @Override
+        public void run() {
+            super.run();
+            d("Thread3 start");
+
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            end = true;
+//            thread2.interrupt();
+            d("Thread3 end");
+        }
+
+    }
+
+    ExecutorService executorService = new ThreadPoolExecutor(1, 1, 60, TimeUnit.SECONDS,
+            new LinkedBlockingQueue<>());
+    private void ttest(){
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                try {
-                    Thread.currentThread().setName("t66666");
-                    d("executorService start");
-//                    while (!Thread.currentThread().isInterrupted()) {
-//
-//                    }
-
-                    Thread.sleep(300000);
-                    d("executorService end");
-                } catch (Exception e) {
-                    d("executorService e=" + e);
-                } finally {
-                    d("executorService finally");
-                }
 
             }
         });
-        mainHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                executorService.shutdown();
-                d("executorService.shutdown()");
-
-                executorService.shutdownNow();
-                d("executorService.shutdownNow()");
-            }
-        }, 2000);
-
+        executorService.shutdown();
+        executorService.shutdownNow();
     }
 
     static               MyThread1 myThread1;

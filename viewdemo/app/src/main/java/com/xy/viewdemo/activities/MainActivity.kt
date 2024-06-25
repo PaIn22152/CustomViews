@@ -54,6 +54,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.btn_constraint).setOnClickListener {
             startActivity(Intent(this@MainActivity, ConstraintActivity::class.java))
         }
+        findViewById<View>(R.id.btn_motion).setOnClickListener {
+            startActivity(Intent(this@MainActivity, MotionActivity::class.java))
+        }
+
 //        startActivity(Intent(this@MainActivity, ConstraintActivity::class.java))
         
         requestPermissions()
